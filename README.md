@@ -1,4 +1,4 @@
-# Monochrome
+# Ourgoodbrands
 
 ## Before you start
 Make sure you use 4-space indentation for `*.json` files and tab indentation for all other file types.
