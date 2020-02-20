@@ -1,0 +1,70 @@
+.section-landing-intro {
+ background: url(../img/landing/intro/intro-bg-dots.png) no-repeat right 41px bottom 44px, url(../img/landing/intro/intro-bg.jpg) no-repeat center bottom / cover, #fff;
+ @include mobile {
+  background: url(../img/landing/intro/intro-bg-mobile.jpg) no-repeat center top / contain;
+ }
+
+ > .main-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 0 142px;
+  @include mobile {
+   height: auto;
+   padding: 448px 0 111px;
+  }
+ }
+}
+
+.landing-intro {
+
+ .landing-intro__title {
+  max-width: 510px;
+  position: relative;
+  &:before {
+   content: '';
+   width: 116px;
+   height: 112px;
+   display: none;
+   background: url(../img/landing/intro/oval-mobile.png) no-repeat center / contain;
+   position: absolute;
+   top: -25px;
+   left: 240px;
+   z-index: -1;
+   @include tablet-mobile {
+    display: block;
+   }
+  }
+ }
+
+ .landing-intro__subtitle {
+  max-width: 490px;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 180%;
+  margin-top: 28px;
+  @include mobile {
+   max-width: 280px;
+   font-size: 21px;
+   margin-top: 15px;
+  }
+ }
+
+ .landing-intro__btns {
+  display: flex;
+  margin-top: 85px;
+  @include mobile {
+   margin-top: 58px;
+  }
+ }
+ .landing-intro__btn {
+  margin-right: 43px;
+  @include mobile {
+   margin-right: 11px;
+  }
+  &:last-child {
+   margin-right: 0;
+  }
+ }
+}

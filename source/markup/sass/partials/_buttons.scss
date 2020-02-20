@@ -1,0 +1,36 @@
+.btn {
+ min-width: 215px;
+ display: inline-block;
+ border-radius: 10px;
+ border: 5px solid #979797;
+ color: rgba(0, 0, 0, 0.65);
+ font-family: Poppins, sans-serif;
+ font-size: 28px;
+ line-height: 46px;
+ font-weight: 500;
+ text-align: center;
+ text-transform: uppercase;
+ padding: 16px 30px;
+ transition: 0.5s;
+ @include mobile {
+  min-width: 148px;
+  font-size: 18px;
+  line-height: 27px;
+  padding: 10px;
+ }
+ &:hover {
+  transform: scale(1.03);
+ }
+
+ &.btn--green {
+  border-color: #73c5c6;
+ }
+ &.btn--red {
+  border-color: #fd8278;
+ }
+ &.btn--white {
+  border-color: #fffafa;
+  background: #fffafa;
+  color: #fd8278;
+ }
+}

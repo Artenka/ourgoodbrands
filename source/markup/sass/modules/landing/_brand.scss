@@ -1,0 +1,55 @@
+.section-landing-brand {
+
+}
+
+.landing-brand-layout {
+ min-height: 100vh;
+ background: url(../img/landing/brand/brand-bg.svg) no-repeat center bottom / cover, #fff;
+ @include mobile {
+  background: url(../img/landing/brand/brand-bg-mobile.svg) no-repeat center top / contain, #fff;
+ }
+
+ .main-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: right;
+  padding: 200px 0 23px;
+  @include mobile {
+   align-items: flex-start;
+   text-align: left;
+   padding: 511px 0 79px;
+  }
+ }
+}
+
+.landing-brand {
+
+ .landing-brand__title {
+  max-width: 470px;
+  @include mobile {
+   font-size: 32px;
+  }
+ }
+
+ .landing-brand__subtitle {
+  max-width: 360px;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 35px 0 0 auto;
+  @include mobile {
+   font-size: 21px;
+   font-weight: 300;
+   margin-top: 12px;
+  }
+ }
+
+ .landing-brand__btn {
+  margin-top: 50px;
+  @include mobile {
+   margin-top: 40px;
+  }
+ }
+}

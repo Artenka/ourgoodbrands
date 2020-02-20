@@ -1,0 +1,40 @@
+| <?php
+| /*
+| Template Name: Landing
+| */
+| ?>
+| <?php get_header(); ?>
+body
+
+  .main#landing
+    include ../partials/landing/menu
+    include ../partials/landing/header
+    include ../partials/fixed-socials
+
+    .fullpage-layout#fullpage
+      include ../pages-partials/landing/intro
+      include ../pages-partials/landing/score
+      include ../pages-partials/landing/brand
+
+    | <?php get_footer(); ?>
+
+  script.
+    $ = jQuery.noConflict();
+    $(function(){
+      // fullpage script
+      if ($(window).width() > 720) {
+        var slideIndex = 1, sliding = false;
+        $('#fullpage').fullpage({
+          anchors: ['intro', 'score', 'brand'],
+          verticalCentered: false,
+          menu: '#menu',
+          scrollOverflow: true,
+          afterResize: function () {
+            $.fn.fullpage.reBuild();
+          },
+          onLeave: function (origin, destination, direction) {
+            //console.log(destination.index);
+          }
+        });
+      }
+    })

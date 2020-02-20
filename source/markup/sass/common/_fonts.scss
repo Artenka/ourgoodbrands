@@ -1,0 +1,36 @@
+/* font-family: "Rubik"; */
+@font-face {
+ font-family: "Rubik";
+ src: url("../fonts/Rubik/Rubik-Regular.ttf");
+ src: url("../fonts/Rubik/Rubik-Regular.ttf") format("truetype");
+ font-style: normal;
+ font-weight: 400;
+}
+@font-face {
+ font-family: "Rubik";
+ src: url("../fonts/Rubik/Rubik-Italic.ttf");
+ src: url("../fonts/Rubik/Rubik-Italic.ttf") format("truetype");
+ font-style: italic;
+ font-weight: 400;
+}
+@font-face {
+ font-family: "Rubik";
+ src: url("../fonts/Rubik/Rubik-Light.ttf");
+ src: url("../fonts/Rubik/Rubik-Light.ttf") format("truetype");
+ font-style: normal;
+ font-weight: 300;
+}
+@font-face {
+ font-family: "Rubik";
+ src: url("../fonts/Rubik/Rubik-Bold.ttf");
+ src: url("../fonts/Rubik/Rubik-Bold.ttf") format("truetype");
+ font-style: normal;
+ font-weight: 700;
+}
+@font-face {
+ font-family: "Rubik";
+ src: url("../fonts/Rubik/Rubik-BoldItalic.ttf");
+ src: url("../fonts/Rubik/Rubik-BoldItalic.ttf") format("truetype");
+ font-style: italic;
+ font-weight: 700;
+}

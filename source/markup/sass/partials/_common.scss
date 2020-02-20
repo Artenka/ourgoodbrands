@@ -1,0 +1,24 @@
+.title-big {
+ font-family: 'Playfair Display', serif;
+ font-size: 60px;
+ line-height: 144%;
+ font-weight: 900;
+ @include mobile {
+  font-size: 38px;
+ }
+
+ &.title-big--white {
+  color: #fff;
+ }
+}
+
+.logo {
+ width: 214px;
+ height: 33px;
+ display: block;
+ background: url(../img/logo.png) no-repeat center / contain;
+ @include mobile {
+  width: 96px;
+  height: 16px;
+ }
+}

@@ -1,0 +1,23 @@
+// common scss files
+@import 'common/variables';
+@import 'common/mixins';
+@import 'common/reset';
+@import 'common/global';
+@import 'common/fonts';
+// external libraries scss files
+@import 'lib/slick';
+@import 'lib/fullpage';
+@import 'lib/simplelineicons';
+@import 'lib/ionicons/ionicons';
+// partials scss files
+@import 'partials/common';
+@import 'partials/buttons';
+@import 'partials/header';
+@import 'partials/footer';
+@import 'partials/menu';
+@import 'partials/form';
+@import 'partials/fixed-socials';
+// modules scss files
+@import 'modules/index';
+@import 'modules/home';
+@import 'modules/landing';

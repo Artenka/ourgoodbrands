@@ -1,0 +1,44 @@
+.section-landing-score {
+ background: url(../img/landing/score/score-bg-dots.png) no-repeat top right, url(../img/landing/score/score-bg.svg) no-repeat center bottom / cover, #fff;
+ @include mobile {
+  background: url(../img/landing/score/score-bg-mobile.svg) no-repeat top center / cover;
+ }
+
+ .main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 231px 0 40px;
+  @include mobile {
+   padding: 511px 0 79px;
+  }
+ }
+}
+
+.landing-score {
+ color: #fffafa;
+
+ .landing-score__title {
+  max-width: 520px;
+  @include mobile {
+   font-size: 32px;
+  }
+ }
+
+ .landing-score__subtitle {
+  max-width: 500px;
+  color: #fffafa;
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 35px;
+  @include mobile {
+   font-size: 21px;
+   font-weight: 300;
+   margin-top: 10px;
+  }
+ }
+
+ .landing-score__btn {
+  margin-top: 35px;
+ }
+}
