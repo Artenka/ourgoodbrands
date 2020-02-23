@@ -1,0 +1,50 @@
+.section.section-home-partners
+  .main-wrapper
+    .home-partners
+      h2.title-big Partners
+
+      .home-partners-layout
+        .home-partners-slider.slick-1
+          .home-partners-slide
+            .home-partners-slide__inner
+              .home-partner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-1.png)")
+          .home-partners-slide
+            .home-partners-slide__inner
+              .home-partner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-2.png)")
+          .home-partners-slide
+            .home-partners-slide__inner
+              .home-partner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-3.png)")
+          .home-partners-slide
+            .home-partners-slide__inner
+              .home-partner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-3.png)")
+          .home-partners-slide
+            .home-partners-slide__inner
+              .home-partner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-3.png)")
+
+
+  script.
+    $ = jQuery.noConflict();
+    $(function () {
+      $('.home-partners-slider').slick({
+        slidesToShow: 3,
+        arrows: true,
+        autoplay: false,
+        swipe: true,
+        infinite: false,
+        responsive: [
+          {
+            breakpoint: 1260,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 1260,
+            settings: {
+              slidesToShow: 3,
+              arrows: false
+            }
+          }
+        ]
+      })
+    });

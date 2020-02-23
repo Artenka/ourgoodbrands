@@ -1,0 +1,112 @@
+.section-home-hub {
+ padding: 33px 0 282px;
+ @include mobile {
+  padding: 0 0 35px;
+  margin-top: -40px;
+ }
+}
+
+.home-hub-layout {
+ position: relative;
+ &:before {
+  content: '';
+  width: 1254px;
+  height: 930px;
+  background: url(../img/home/hub/arrow-icon.png) no-repeat top 110px right 42px, url(../img/home/hub/hub-bg.png) no-repeat center / contain;
+  position: absolute;
+  top: calc(50% - 465px);
+  left: calc(50% - 627px);
+  @include mobile {
+   width: 426px;
+   height: 1124px;
+   background: url(../img/home/hub/arrow-icon.png) no-repeat top 70px right 42px / 56px, url(../img/home/hub/hub-bg-mobile.svg) no-repeat center / contain;
+   top: calc(50% - 562px);
+   left: calc(50% - 213px);
+  }
+ }
+}
+
+.home-hub {
+ min-height: 846px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 110px 100px 100px 55px;
+ position: relative;
+ z-index: 2;
+ @include tablet {
+  padding: 110px 0 100px 0;
+ }
+ @include mobile {
+  min-height: 1041px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 125px 0 82px;
+ }
+
+ .home-hub__thumb {
+  width: 425px;
+  height: 510px;
+  background: no-repeat center / cover;
+  @include tablet {
+   width: 300px;
+   height: 360px;
+  }
+  @include mobile {
+   width: 255px;
+   height: 306px;
+   order: 2;
+   margin-top: 42px;
+  }
+ }
+
+ .home-hub__content {
+  width: 505px;
+  text-align: center;
+  @include tablet {
+   width: 350px;
+  }
+  @include mobile {
+   width: 100%;
+   order: 1;
+  }
+ }
+
+ .home-hub__title {
+  font-family: Lato, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  line-height: 54px;
+  @include tablet {
+   font-size: 24px;
+   line-height: 30px;
+  }
+  @include mobile {
+   font-size: 28px;
+   letter-spacing: 1.4px;
+   line-height: 35px;
+  }
+ }
+ .home-hub__text {
+  font-family: Poppins, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 40px;
+  margin-top: 8px;
+  @include tablet-mobile {
+   font-size: 16px;
+   line-height: 32px;
+  }
+  @include mobile {
+   margin-top: 18px;
+  }
+ }
+
+ .home-hub__btn {
+  margin-top: 33px;
+  @include mobile {
+   margin-top: 10px;
+  }
+ }
+}

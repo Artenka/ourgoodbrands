@@ -1,7 +1,7 @@
 .section-landing-intro {
- background: url(../img/landing/intro/intro-bg-dots.png) no-repeat right 41px bottom 44px, url(../img/landing/intro/intro-bg.jpg) no-repeat center bottom / cover, #fff;
+ background: url(../img/landing/intro/intro-bg.jpg) no-repeat center bottom / cover, #fff;
  @include mobile {
-  background: url(../img/landing/intro/intro-bg-mobile.jpg) no-repeat center top / contain;
+  background: url(../img/landing/intro/intro-bg-mobile.jpg) no-repeat center top / contain, #fffafa;
  }
 
  > .main-wrapper {
@@ -13,6 +13,12 @@
   @include mobile {
    height: auto;
    padding: 448px 0 111px;
+  }
+ }
+
+ .title-big {
+  @include desktop {
+   font-size: 60px;
   }
  }
 }

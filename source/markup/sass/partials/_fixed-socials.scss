@@ -14,14 +14,37 @@
  @include tablet-mobile {
   display: none;
  }
-}
 
-.fixed-social {
- color: #ffffff;
- font-family: Ionicons;
- font-size: 24px;
- margin-bottom: 21px;
- &:last-child {
-  margin-bottom: 0;
+ .fixed-social {
+  color: #ffffff;
+  font-family: Ionicons;
+  font-size: 24px;
+  margin-bottom: 21px;
+  &:last-child {
+   margin-bottom: 0;
+  }
+
+  &:hover {
+
+   &.fixed-social--fb {
+    color: #3b5998
+   }
+   &.fixed-social--tw {
+    color: #1da1f2;
+   }
+   &.fixed-social--pin {
+    color: #c8232c;
+   }
+   &.fixed-social--yt {
+    color: #FF0000
+   }
+   &.fixed-social--in {
+    color: #8a3ab9;
+   }
+  }
+ }
+
+ &.fixed-socials--black .fixed-social {
+  color: #000;
  }
 }

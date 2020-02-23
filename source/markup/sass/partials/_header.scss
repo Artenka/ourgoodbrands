@@ -5,6 +5,7 @@
  top: 0;
  left: 0;
  z-index: 21;
+ transition: 0.5s;
  @include mobile {
   padding-top: 17px;
  }
@@ -20,11 +21,28 @@
   align-items: center;
   justify-content: flex-end;
  }
+
+ &.main-header-landing--black {
+  background: #fff;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+
+  .main-header-menu .main-header-menu__item-link {
+   color: #000;
+  }
+ }
+
+ #mobile-menu-icon {
+  position: relative;
+  top: auto;
+  right: auto;
+  transform: none;
+ }
 }
 
 .main-header-menu {
  display: flex;
  align-items: center;
+ margin-right: 134px;
  @include tablet-mobile {
   display: none;
  }

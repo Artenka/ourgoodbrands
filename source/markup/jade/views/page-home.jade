@@ -1,0 +1,22 @@
+| <?php
+| /*
+| Template Name: Home
+| */
+| ?>
+| <?php get_header('new'); ?>
+
+body
+  .background-overlay
+    #tie-container.site.tie-container
+      #tie-wrapper
+        .main#home
+          include ../pages-partials/home/intro
+          include ../pages-partials/home/guides
+          include ../pages-partials/home/hub
+          include ../pages-partials/home/movies
+          include ../pages-partials/home/read
+          include ../pages-partials/home/partners
+
+
+          include ../partials/footer
+          | <?php get_footer('new'); ?>

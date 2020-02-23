@@ -3,38 +3,56 @@
 | Template Name: Landing
 | */
 | ?>
-| <?php get_header(); ?>
+| <?php get_header('new'); ?>
+
 body
+  // Google Tag Manager (noscript)
+  noscript
+    iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-MZ2WB66', height='0', width='0', style='display:none;visibility:hidden')
+  // End Google Tag Manager (noscript)
 
-  .main#landing
-    include ../partials/landing/menu
-    include ../partials/landing/header
-    include ../partials/fixed-socials
+  | <?php do_action( 'TieLabs/before_theme' ); ?>
 
-    .fullpage-layout#fullpage
-      include ../pages-partials/landing/intro
-      include ../pages-partials/landing/score
-      include ../pages-partials/landing/brand
+  .background-overlay
+    #tie-container.site.tie-container
+      | <?php do_action( 'TieLabs/before_wrapper' ); ?>
+      #tie-wrapper
+        .main#landing
+          include ../partials/landing/menu
+          include ../partials/landing/header
+          include ../partials/fixed-socials
 
-    | <?php get_footer(); ?>
+          .fullpage-layout#fullpage
+            include ../pages-partials/landing/intro
+            include ../pages-partials/landing/score
+            include ../pages-partials/landing/brand
 
-  script.
-    $ = jQuery.noConflict();
-    $(function(){
-      // fullpage script
-      if ($(window).width() > 720) {
-        var slideIndex = 1, sliding = false;
-        $('#fullpage').fullpage({
-          anchors: ['intro', 'score', 'brand'],
-          verticalCentered: false,
-          menu: '#menu',
-          scrollOverflow: true,
-          afterResize: function () {
-            $.fn.fullpage.reBuild();
-          },
-          onLeave: function (origin, destination, direction) {
-            //console.log(destination.index);
-          }
-        });
-      }
-    })
+          | <?php get_footer('new'); ?>
+
+        script.
+          $ = jQuery.noConflict();
+          $(function(){
+            // fullpage script
+            if ($(window).width() > 720) {
+              var slideIndex = 1, sliding = false;
+              $('#fullpage').fullpage({
+                anchors: ['intro', 'score', 'brand'],
+                verticalCentered: false,
+                menu: '#menu',
+                scrollOverflow: true,
+                afterResize: function () {
+                  $.fn.fullpage.reBuild();
+                },
+                onLeave: function (origin, destination, direction) {
+                  console.log(destination.index);
+                  if(destination.index === 0) {
+                    $('.fixed-socials').removeClass('fixed-socials--black');
+                    $('.main-header-landing').removeClass('main-header-landing--black');
+                  } else {
+                    $('.fixed-socials').addClass('fixed-socials--black');
+                    $('.main-header-landing').addClass('main-header-landing--black');
+                  }
+                }
+              });
+            }
+          })

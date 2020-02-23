@@ -1,0 +1,28 @@
+#home.main {
+ background: #fffafa;
+
+ .main-wrapper {
+  @include desktop {
+   width: 1170px;
+  }
+ }
+
+ .title-big {
+  font-family: AvenirNext, sans-serif;
+  font-weight: 700;
+ }
+
+ .main-footer {
+  background: #f5f8fa;
+  margin: 0;
+ }
+}
+
+body .main {
+ @import "home/intro";
+ @import "home/guides";
+ @import "home/hub";
+ @import "home/movies";
+ @import "home/read";
+ @import "home/partners";
+}

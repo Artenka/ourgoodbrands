@@ -1,0 +1,25 @@
+.main {
+
+ .slick-1 {
+
+  .slick-arrow {
+   width: 71px;
+   height: 21px;
+   background: no-repeat center / contain;
+   font-size: 0;
+   position: absolute;
+   top: calc(50% - 10px);
+   z-index: 10;
+   cursor: pointer;
+
+   &.slick-prev {
+    background-image: url(../img/common/left-arrow.svg);
+    left: -37px;
+   }
+   &.slick-next {
+    background-image: url(../img/common/right-arrow.svg);
+    right: -37px;
+   }
+  }
+ }
+}

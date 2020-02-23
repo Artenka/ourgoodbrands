@@ -16,7 +16,7 @@
   align-items: flex-end;
   justify-content: center;
   text-align: right;
-  padding: 200px 0 23px;
+  padding: 240px 0 63px;
   @include mobile {
    align-items: flex-start;
    text-align: left;
@@ -28,7 +28,7 @@
 .landing-brand {
 
  .landing-brand__title {
-  max-width: 470px;
+  max-width: 500px;
   @include mobile {
    font-size: 32px;
   }

@@ -1,0 +1,52 @@
+.section.section-home-read
+  .main-wrapper
+    .home-read
+      h2.title-big Read
+
+      .read-list.slick-1
+        .read-item
+          .read-item__thumb(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/read/read-item-thumb.jpg)")
+          h2.read-item__title Lorem ipsum
+          p.read-item__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
+        .read-item
+          .read-item__thumb(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/read/read-item-thumb.jpg)")
+          h2.read-item__title Lorem ipsum
+          p.read-item__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
+        .read-item
+          .read-item__thumb(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/read/read-item-thumb.jpg)")
+          h2.read-item__title Lorem ipsum
+          p.read-item__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
+        .read-item
+          .read-item__thumb(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/read/read-item-thumb.jpg)")
+          h2.read-item__title Lorem ipsum
+          p.read-item__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
+        .read-item
+          .read-item__thumb(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/read/read-item-thumb.jpg)")
+          h2.read-item__title Lorem ipsum
+          p.read-item__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
+        .read-item
+          .read-item__thumb(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/read/read-item-thumb.jpg)")
+          h2.read-item__title Lorem ipsum
+          p.read-item__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
+
+
+  script.
+    $ = jQuery.noConflict();
+    $(function () {
+      $('.read-list').slick({
+        slidesToShow: 4,
+        arrows: true,
+        autoplay: false,
+        swipe: true,
+        infinite: false,
+        responsive: [
+          {
+            breakpoint: 1260,
+            settings: {
+              slidesToShow: 2,
+              arrows: false
+            }
+          }
+        ]
+      })
+    });
