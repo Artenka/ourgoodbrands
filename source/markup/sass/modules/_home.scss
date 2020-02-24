@@ -1,11 +1,15 @@
 #home.main {
  background: #fffafa;
 
- .main-wrapper {
-  @include desktop {
-   width: 1170px;
-  }
- }
+ //.main-wrapper {
+ // @include desktop {
+ //  width: 1170px;
+ // }
+ //}
+ //
+ //.main-footer .main-wrapper {
+ // width: 81%;
+ //}
 
  .title-big {
   font-family: AvenirNext, sans-serif;

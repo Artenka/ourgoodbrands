@@ -42,7 +42,7 @@
 .main-header-menu {
  display: flex;
  align-items: center;
- margin-right: 134px;
+ //margin-right: 134px;
  @include tablet-mobile {
   display: none;
  }
@@ -105,10 +105,10 @@
  }
 
  .main-header-menu__item-link {
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 27px;
-  color: #fff;
+  color: #000;
 
   i {
    font-size: 14px;

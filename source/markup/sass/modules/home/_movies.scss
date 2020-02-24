@@ -66,19 +66,31 @@
 }
 
 .home-movie {
- width: 270px;
+ //width: 270px;
  margin: 0 15px;
  @include mobile {
   width: 125px;
   margin: 0 12px;
  }
+ &:hover {
+
+  .home-movie__thumb-inner {
+   transform: scale(1.03);
+  }
+ }
 
  .home-movie__thumb {
   height: 285px;
   border-radius: 3px 3px 0 0;
-  background: no-repeat center / cover;
+  overflow: hidden;
   @include mobile {
    height: 167px;
+  }
+
+  .home-movie__thumb-inner {
+   height: 100%;
+   background: no-repeat center top / cover;
+   transition: 0.5s;
   }
  }
 

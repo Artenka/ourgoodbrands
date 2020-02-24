@@ -24,12 +24,25 @@
  }
  &:before {
   content: '';
-  width: 1250px;
-  height: 662px;
+  //width: 1250px;
+  //height: 662px;
+  width: 120%;
   background: url(../img/home/partners/partners-block.png) no-repeat center / contain;
+  padding-bottom: 56%;
   position: absolute;
-  top: calc(50% - 331px);
-  left: calc(50% - 625px);
+  top: 0;
+  left: -10%;
+  //top: calc(50% - 331px);
+  //left: calc(50% - 625px);
+  @include tablet-mobile {
+   padding-bottom: 0;
+  }
+  @include tablet {
+   width: 1250px;
+   height: 662px;
+   top: calc(50% - 331px);
+   left: calc(50% - 625px);
+  }
   @include mobile {
    background-image: url(../img/home/partners/partners-block.png);
    width: 440px;
@@ -82,8 +95,13 @@
  width: 275px;
  height: 275px;
  background: no-repeat center / contain;
+ transition: 0.5s;
+ cursor: pointer;
  @include mobile {
   width: 70px;
   height: 70px;
+ }
+ &:hover {
+  transform: scale(1.03);
  }
 }

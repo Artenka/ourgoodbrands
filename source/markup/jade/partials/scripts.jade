@@ -21,6 +21,11 @@ script.
       hidePopup();
     });
 
+    // footer menu dropdown on mobile
+    $('.main-footer-top__subtitle').on('touchstart', function(){
+      $(this).toggleClass('active').next('.main-footer-top__menu-list').slideToggle(300);
+    });
+
     //phone flags
     //$("input[type=tel]").intlTelInput({
     //  utilsScript: 'js/utils.js',

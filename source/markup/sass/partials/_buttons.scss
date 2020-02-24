@@ -50,5 +50,9 @@
   letter-spacing: 0.17px;
   text-transform: uppercase;
   padding: 10px 45px;
+  transition: 0.5s;
+  &:hover {
+   transform: scale(1.03);
+  }
  }
 }

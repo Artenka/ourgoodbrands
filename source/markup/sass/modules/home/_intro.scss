@@ -8,6 +8,7 @@
 .home-banner {
  min-height: 630px;
  background: no-repeat center / cover, #ccc;
+ background-attachment: fixed;
  color: #fff;
  padding: 100px 0 170px;
  @include mobile {
@@ -63,31 +64,31 @@
 
 
 .home-intro-articles {
- width: 1920px;
+ //width: 1920px;
  //display: flex;
  //align-items: center;
  margin: -150px 0 0;
  position: relative;
- left: calc(50% - 960px);
+ //left: calc(50% - 960px);
  @include tablet {
-  width: 1240px;
-  left: calc(50% - 620px);
+  //width: 1240px;
+  //left: calc(50% - 620px);
  }
  @include mobile {
-  width: 710px;
-  left: calc(50% - 355px);
+  //width: 710px;
+  //left: calc(50% - 355px);
   margin-top: -100px;
  }
 
- .slick-list {
-  padding: 0 360px!important;
-  @include tablet {
-   padding: 0 265px!important;
-  }
-  @include mobile {
-   padding: 0 200px!important;
-  }
- }
+ //.slick-list {
+ // padding: 0 360px!important;
+ // @include tablet {
+ //  padding: 0 265px!important;
+ // }
+ // @include mobile {
+ //  padding: 0 200px!important;
+ // }
+ //}
 
  .slick-slide {
   opacity: 0;
@@ -106,24 +107,24 @@
     top: 180px;
    }
 
-   &.slick-prev {
-    left: 323px;
-    @include tablet {
-     left: 223px;
-    }
-    @include mobile {
-     left: 150px;
-    }
-   }
-   &.slick-next {
-    right: 323px;
-    @include tablet {
-     right: 223px;
-    }
-    @include mobile {
-     right: 160px;
-    }
-   }
+   //&.slick-prev {
+   // left: 323px;
+   // @include tablet {
+   //  left: 223px;
+   // }
+   // @include mobile {
+   //  left: 150px;
+   // }
+   //}
+   //&.slick-next {
+   // right: 323px;
+   // @include tablet {
+   //  right: 223px;
+   // }
+   // @include mobile {
+   //  right: 160px;
+   // }
+   //}
   }
  }
 }
@@ -138,7 +139,7 @@
   content: '';
   width: calc(100% - 88px);
   height: 110px;
-  box-shadow: 0 3px 90px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 40px rgba(0, 0, 0, 0.4);
   position: absolute;
   bottom: 112px;
   left: 44px;
@@ -149,7 +150,8 @@
 }
 
 .home-intro-article {
- width: 370px;
+ //width: 370px;
+ display: block;
  border-radius: 20px;
  background: #ffffff;
  position: relative;
@@ -162,6 +164,9 @@
   width: 310px;
   box-shadow: 0 5px 13px rgba(0, 0, 0, 0.1);
   margin: 0;
+ }
+ &:hover {
+  box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.3);
  }
 
  .home-intro-article__thumb {
