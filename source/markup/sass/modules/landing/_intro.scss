@@ -1,5 +1,5 @@
 .section-landing-intro {
- background: url(../img/landing/intro/intro-bg.jpg) no-repeat center bottom / cover, #fff;
+ background: url(../img/landing/intro/intro-bg.svg) no-repeat center bottom 10px / cover, #fff;
  @include mobile {
   background: url(../img/landing/intro/intro-bg-mobile.jpg) no-repeat center top / 100% auto, #fffafa;
  }
@@ -9,7 +9,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 100px 0 142px;
+  padding: 7.3vh 0 14vh;
+  //padding: 100px 0 142px;
+  //@include fullhd {
+  // padding: 100px 0 173px;
+  //}
   @include mobile {
    height: auto;
    padding: 448px 0 111px;
@@ -28,6 +32,10 @@
  .landing-intro__title {
   max-width: 510px;
   position: relative;
+  @include fullhd {
+   max-width: 560px;
+   font-size: 72px;
+  }
   &:before {
    content: '';
    width: 116px;
@@ -50,6 +58,10 @@
   font-weight: 300;
   line-height: 180%;
   margin-top: 28px;
+  @include fullhd {
+   font-size: 28px;
+   margin-top: 40px;
+  }
   @include mobile {
    max-width: 280px;
    font-size: 21px;
@@ -60,12 +72,18 @@
  .landing-intro__btns {
   display: flex;
   margin-top: 85px;
+  @include fullhd {
+   margin-top: 169px;
+  }
   @include mobile {
    margin-top: 58px;
   }
  }
  .landing-intro__btn {
-  margin-right: 43px;
+  margin-right: 39px;
+  @include fullhd {
+   min-width: 251px;
+  }
   @include mobile {
    margin-right: 11px;
   }

@@ -30,6 +30,10 @@ body .main {
   height: 33px;
   display: block;
   background: url(../img/logo.png) no-repeat center / contain;
+  @include fullhd {
+   width: 232px;
+   height: 36px;
+  }
   @include mobile {
    width: 96px;
    height: 16px;

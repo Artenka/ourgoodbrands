@@ -2,8 +2,16 @@
   .landing-brand-layout
     .main-wrapper
       .landing-brand
+        | <?php if(get_field('section_3_title')): ?>
+        h2.title-big.landing-brand__title!= "<?= get_field('section_3_title'); ?>"
+        | <?php else: ?>
         h2.title-big.landing-brand__title How sustainable is your brand?
+        | <?php endif; ?>
+        | <?php if(get_field('section_3_subtitle')): ?>
+        h3.landing-brand__subtitle!= "<?= get_field('section_3_subtitle'); ?>"
+        | <?php else: ?>
         h3.landing-brand__subtitle Take this quiz and get a free eco-consultation to boost your sustainable pitch.
-        a(href!="<?= the_field('person_start_link'); ?>").btn.landing-brand__btn START
+        | <?php endif; ?>
+        a(href!="<?= the_field('brand_start_link'); ?>").btn.landing-brand__btn START
 
   include ../../partials/footer

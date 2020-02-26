@@ -2,13 +2,21 @@
   .scroll-mouse
   .main-wrapper
     .landing-intro
+      | <?php if(get_field('section_1_title')): ?>
+      h2.title-big.landing-intro__title!= "<?= get_field('section_1_title'); ?>"
+      | <?php else: ?>
       h2.title-big.landing-intro__title For the awakers. Go sustainable!
+      | <?php endif; ?>
+      | <?php if(get_field('section_1_subtitle')): ?>
+      h3.landing-intro__subtitle!= "<?= get_field('section_1_subtitle'); ?>"
+      | <?php else: ?>
       h3.landing-intro__subtitle Revolution starts at home. Are you one of those change-makers?
+      | <?php endif; ?>
       .landing-intro__btns
-        a(href="#score").btn.btn--green.landing-intro__btn.br-lg-md I’M A PERSON
-        a(href="#score-section").btn.btn--green.landing-intro__btn.br-sm.link-smooth I’M A PERSON
-        a(href="#brand").btn.btn--red.landing-intro__btn.br-lg-md I’M A BRAND
-        a(href="#brand-section").btn.btn--red.landing-intro__btn.br-sm.link-smooth I’M A BRAND
+        a(href="#score").btn.btn--md.btn--green.landing-intro__btn.br-lg-md I’M A PERSON
+        a(href="#score-section").btn.btn--md.btn--green.landing-intro__btn.br-sm.link-smooth I’M A PERSON
+        a(href="#brand").btn.btn--md.btn--red.landing-intro__btn.br-lg-md I’M A BRAND
+        a(href="#brand-section").btn.btn--md.btn--red.landing-intro__btn.br-sm.link-smooth I’M A BRAND
 
 
 

@@ -1,11 +1,15 @@
 .main-header-landing {
  width: 100%;
- padding-top: 25px;
+ padding-top: 8px;
+ //padding-top: 25px;
  position: fixed;
  top: 0;
  left: 0;
- z-index: 21;
+ z-index: 999;
  transition: 0.5s;
+ @include fullhd {
+  padding-top: 8px;
+ }
  @include mobile {
   padding-top: 17px;
  }
@@ -40,17 +44,25 @@
 }
 
 .main-header-menu {
+ flex: 1;
  display: flex;
  align-items: center;
  //margin-right: 134px;
+ margin-left: 21vw;
+ @include fullhd {
+  margin-left: 25vw;
+ }
  @include tablet-mobile {
   display: none;
  }
 
  .main-header-menu__item {
-  padding: 20px 5px;
-  margin-right: 21px;
+  padding: 20px 0.9vw;
+  margin-right: 2.7vw;
   position: relative;
+  //@include fullhd {
+  // margin-right: 52px;
+  //}
   &:before {
    content: '';
    width: 100%;
@@ -105,15 +117,29 @@
  }
 
  .main-header-menu__item-link {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 27px;
-  color: #000;
+  color: #fff;
+  position: relative;
+  @include fullhd {
+   font-size: 16px;
+   line-height: 24px;
+  }
 
   i {
-   font-size: 14px;
+   width: 15px;
+   font-size: 12px;
+   line-height: 27px;
    font-weight: 700;
-   margin-left: 5px;
+   text-align: center;
+   //margin-left: 5px;
+   position: absolute;
+   left: calc(100% + 9px);
+   @include fullhd {
+    font-size: 14px;
+    line-height: 24px;
+   }
   }
  }
 }

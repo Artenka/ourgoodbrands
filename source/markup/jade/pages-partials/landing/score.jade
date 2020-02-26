@@ -1,7 +1,15 @@
 .section.section-landing-score#score-section
   .main-wrapper
     .landing-score
-      h2.title-big.title-big--white.landing-score__title What is your sustainable score?
+      | <?php if(get_field('section_2_title')): ?>
+      h2.title-big.landing-score__title!= "<?= get_field('section_2_title'); ?>"
+      | <?php else: ?>
+      h2.title-big.landing-score__title What is your sustainable score?
+      | <?php endif; ?>
+      | <?php if(get_field('section_2_subtitle')): ?>
+      h3.landing-score__subtitle!= "<?= get_field('section_2_subtitle'); ?>"
+      | <?php else: ?>
       h3.landing-score__subtitle Start this quiz and get FREE guides to improve your sustainable behaviour.
-      a(href!="<?= the_field('brand_start_link'); ?>").btn.btn--white.landing-score__btn START
+      | <?php endif; ?>
+      a(href!="<?= the_field('person_start_link'); ?>").btn.btn--white.landing-score__btn START
 
