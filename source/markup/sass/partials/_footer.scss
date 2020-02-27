@@ -86,10 +86,10 @@
   height: 100%;
   position: absolute;
   @include tablet {
-   width: calc(50vw - 355px);
+   //width: calc(50vw - 355px);
   }
   @include mobile {
-   width: calc(50vw - 155px);
+   //width: calc(50vw - 155px);
    //width: calc(50vw - 190px);
   }
  }
@@ -98,12 +98,12 @@
   //left: calc(50% - 50vw);
   left: -9.5vw;
   @include tablet {
-   left: calc(50% - 50vw);
+   //left: calc(50% - 50vw);
   }
   @include mobile {
    //width: calc(50vw - 140px);
    //left: calc(50% - 50vw - 50px);
-   left: calc(50% - 50vw);
+   //left: calc(50% - 50vw);
   }
  }
  &:after {
@@ -111,12 +111,12 @@
   right: -9.5vw;
   //right: calc(50% - 50vw);
   @include tablet {
-   right: calc(50% - 50vw);
+   //right: calc(50% - 50vw);
   }
   @include mobile {
    //width: calc(50vw - 240px);
    //right: calc(50% - 50vw + 50px);
-   right: calc(50% - 50vw);
+   //right: calc(50% - 50vw);
   }
  }
 

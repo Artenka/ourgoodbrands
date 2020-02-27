@@ -54,18 +54,19 @@
 }
 
 .home-partners-slider {
- height: 578px;
+ //height: 578px;
  display: flex;
  position: relative;
  z-index: 2;
- @include mobile {
-  height: 174px;
- }
+ //@include mobile {
+ // height: 174px;
+ //}
 
  &.slick-1 {
 
   .slick-arrow {
-   top: 263px;
+   //top: 43%;
+   //top: 263px;
 
    &.slick-prev {
     left: -23px;
@@ -81,6 +82,7 @@
 
  .home-partners-slide__inner {
   height: 578px;
+  height: 40vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,6 +99,10 @@
  background: no-repeat center / contain;
  transition: 0.5s;
  cursor: pointer;
+ @include tablet {
+  width: 180px;
+  height: 180px;
+ }
  @include mobile {
   width: 70px;
   height: 70px;

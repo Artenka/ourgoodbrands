@@ -14,12 +14,22 @@
   text-transform: uppercase;
   padding: 16px 30px;
   transition: 0.5s;
-  @include mobile {
+  @include tablet-mobile {
    min-width: 148px;
+   min-width: 36vw;
    font-size: 18px;
-   line-height: 27px;
-   padding: 10px;
+   font-size: 4.4vw;
+   padding: 10px 8px;
+   padding: 2.4vw 2vw;
+   margin-right: 11px;
+   margin-right: 2.7vw;
   }
+  //@include mobile {
+  // min-width: 148px;
+  // font-size: 18px;
+  // line-height: 27px;
+  // padding: 10px;
+  //}
   &:hover {
    transform: scale(1.03);
   }

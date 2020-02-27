@@ -1,6 +1,6 @@
 .section-landing-score {
  background: url(../img/landing/score/score-bg-dots.png) no-repeat top right, url(../img/landing/score/score-bg.svg) no-repeat center bottom / cover, #fff;
- @include mobile {
+ @include tablet-mobile {
   background: url(../img/landing/score/score-bg-mobile.svg) no-repeat top center / cover;
  }
 
@@ -10,8 +10,9 @@
   flex-direction: column;
   justify-content: center;
   padding: 231px 0 40px;
-  @include mobile {
-   padding: 511px 0 79px;
+  @include tablet-mobile {
+   //padding: 511px 0 79px;
+   padding: 123vw 0 19vw;
   }
  }
 }
@@ -21,8 +22,9 @@
 
  .landing-score__title {
   max-width: 520px;
-  @include mobile {
-   font-size: 32px;
+  @include tablet-mobile {
+   max-width: 280px;
+   max-width: 72.5vw;
   }
  }
 
@@ -32,8 +34,11 @@
   font-size: 24px;
   font-weight: 500;
   margin-top: 35px;
-  @include mobile {
+  @include tablet-mobile {
+   max-width: 310px;
+   max-width: 72.5vw;
    font-size: 21px;
+   font-size: 5.05vw;
    font-weight: 300;
    margin-top: 10px;
   }

@@ -1,5 +1,6 @@
 .section-home-intro {
  padding: 0 0 121px;
+ padding: 0 0 8.4vw;
  @include mobile {
   padding-bottom: 60px;
  }
@@ -7,10 +8,12 @@
 
 .home-banner {
  min-height: 630px;
+ min-height: 43.7vw;
  background: no-repeat center / cover, #ccc;
  background-attachment: fixed;
  color: #fff;
  padding: 100px 0 170px;
+ padding: 7vw 0 12vw;
  @include mobile {
   min-height: 400px;
   padding: 60px 0 120px;
@@ -18,19 +21,26 @@
 
  .home-banner__subtitle {
   max-width: 510px;
+  max-width: 35.5vw;
   font-size: 24px;
+  font-size: 1.67vw;
   font-weight: 900;
   text-transform: uppercase;
   @include mobile {
+   max-width: 100%;
    font-size: 16px;
   }
  }
  .home-banner__title {
   max-width: 510px;
+  max-width: 35.5vw;
   font-size: 36px;
+  font-size: 2.5vw;
   font-weight: 600;
   margin-top: 20px;
+  margin-top: 1.4vw;
   @include mobile {
+   max-width: 100%;
    font-size: 24px;
    margin-top: 10px;
   }
@@ -40,14 +50,17 @@
   display: flex;
   align-items: center;
   margin-top: 35px;
+  margin-top: 2.5vw;
   @include mobile {
    margin-top: 25px;
   }
  }
  .home-banner__tag {
   font-size: 16px;
+  font-size: 1.1vw;
   font-weight: 500;
   margin-right: 15px;
+  margin-right: 1.2vw;
   @include mobile {
    font-size: 14px;
    margin-right: 10px;
@@ -158,10 +171,10 @@
  z-index: 2;
  margin: 0 15px;
  @include tablet {
-  width: 340px;
+  //width: 340px;
  }
  @include mobile {
-  width: 310px;
+  //width: 310px;
   box-shadow: 0 5px 13px rgba(0, 0, 0, 0.1);
   margin: 0;
  }
@@ -170,9 +183,10 @@
  }
 
  .home-intro-article__thumb {
-  height: 280px;
+  //height: 280px;
   background: no-repeat center / cover, #f1f1f1;
   border-radius: 20px 20px 0 0;
+  padding-bottom: 78%;
   @include mobile {
    height: 235px;
   }

@@ -4,6 +4,12 @@ body .main {
  @import "landing/brand";
  @import "landing/outro";
 
+ .section {
+  @include tablet-mobile {
+   height: auto!important;
+  }
+ }
+
  //&#landing {
  //
  // .logo {

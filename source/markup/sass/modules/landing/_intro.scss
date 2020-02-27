@@ -1,22 +1,40 @@
 .section-landing-intro {
- background: url(../img/landing/intro/intro-bg.svg) no-repeat center bottom 10px / cover, #fff;
- @include mobile {
-  background: url(../img/landing/intro/intro-bg-mobile.jpg) no-repeat center top / 100% auto, #fffafa;
+ background: url(../img/landing/intro/intro-bg_.svg) no-repeat center bottom 10px / cover, #fffafa;
+ position: relative;
+ @include tablet-mobile {
+  background: url(../img/landing/intro/intro-bg-mobile.jpg) no-repeat center top / 102% auto, #fffafa;
  }
+ //&:before {
+ // content: '';
+ // //width: 100vw;
+ // //height: 56.28vw;
+ // width: 177.685vh;
+ // height: 100vh;
+ // background: url(../img/landing/intro/intro-bg.svg) no-repeat top left / cover;
+ // position: absolute;
+ // top: 0;
+ // right: 0;
+ // z-index: 2;
+ //}
 
- > .main-wrapper {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 7.3vh 0 14vh;
-  //padding: 100px 0 142px;
-  //@include fullhd {
-  // padding: 100px 0 173px;
-  //}
-  @include mobile {
-   height: auto;
-   padding: 448px 0 111px;
+ &, & .fp-scroller {
+  > .main-wrapper {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 7.3vh 0 14vh;
+   position: relative;
+   z-index: 3;
+   //padding: 100px 0 142px;
+   //@include fullhd {
+   // padding: 100px 0 173px;
+   //}
+   @include tablet-mobile {
+    height: auto;
+    //padding: 448px 0 111px;
+    padding: 108vw 0 26vw;
+   }
   }
  }
 
@@ -27,65 +45,99 @@
  }
 }
 
+.landing-intro-bg {
+
+}
+
 .landing-intro {
 
  .landing-intro__title {
-  max-width: 510px;
+  //max-width: 510px;
+  max-width: 29.17vw;
+  font-size: 72px;
+  font-size: 3.7vw;
+  //font-size: 4.5em;
   position: relative;
-  @include fullhd {
-   max-width: 560px;
-   font-size: 72px;
+  //@include fullhd {
+  // max-width: 560px;
+  // font-size: 72px;
+  //}
+  @include tablet-mobile {
+   max-width: 300px;
+   max-width: 72.5vw;
+   font-size: 38px;
+   font-size: 9.2vw;
   }
-  &:before {
-   content: '';
-   width: 116px;
-   height: 112px;
-   display: none;
-   background: url(../img/landing/intro/oval-mobile.png) no-repeat center / contain;
-   position: absolute;
-   top: -25px;
-   left: 240px;
-   z-index: -1;
-   @include tablet-mobile {
-    display: block;
-   }
-  }
+  //&:before {
+  // content: '';
+  // width: 116px;
+  // height: 112px;
+  // display: none;
+  // background: url(../img/landing/intro/oval-mobile.png) no-repeat center / contain;
+  // position: absolute;
+  // top: -25px;
+  // left: 240px;
+  // z-index: -1;
+  // @include tablet-mobile {
+  //  display: block;
+  // }
+  //}
  }
 
  .landing-intro__subtitle {
-  max-width: 490px;
+  //max-width: 490px;
+  max-width: 25.5vw;
   font-size: 26px;
+  font-size: 1.5vw;
+  //font-size: 1.8em;
   font-weight: 300;
   line-height: 180%;
-  margin-top: 28px;
-  @include fullhd {
-   font-size: 28px;
-   margin-top: 40px;
-  }
-  @include mobile {
+  //margin-top: 28px;
+  margin-top: 3.7vh;
+  //@include fullhd {
+  // font-size: 28px;
+  // margin-top: 40px;
+  //}
+  @include tablet-mobile {
    max-width: 280px;
+   max-width: 72.5vw;
    font-size: 21px;
+   font-size: 5.05vw;
    margin-top: 15px;
+   margin-top: 3.6vw;
   }
  }
 
  .landing-intro__btns {
   display: flex;
-  margin-top: 85px;
-  @include fullhd {
-   margin-top: 169px;
-  }
-  @include mobile {
+  margin-top: 15.65vh;
+  //margin-top: 85px;
+  //@include fullhd {
+  // margin-top: 169px;
+  //}
+  @include tablet-mobile {
    margin-top: 58px;
+   margin-top: 14vw;
   }
  }
  .landing-intro__btn {
-  margin-right: 39px;
-  @include fullhd {
-   min-width: 251px;
-  }
-  @include mobile {
+  min-width: 13vw;
+  font-size: 1.2vw;
+  //margin-right: 39px;
+  padding: 1.1vw 2.1vw;
+  margin-right: 2.1vw;
+  //@include fullhd {
+  // min-width: 251px;
+  //}
+  @include tablet-mobile {
+   min-width: 148px;
+   min-width: 36vw;
+   font-size: 18px;
+   font-size: 4.4vw;
+   padding: 10px 8px;
+   padding: 2.4vw 2vw;
    margin-right: 11px;
+   margin-right: 2.7vw;
   }
   &:last-child {
    margin-right: 0;

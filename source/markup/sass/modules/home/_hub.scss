@@ -37,6 +37,7 @@
  position: relative;
  z-index: 2;
  @include tablet {
+  max-width: 710px;
   padding: 110px 0 100px 0;
  }
  @include mobile {
@@ -69,7 +70,7 @@
    width: 350px;
   }
   @include mobile {
-   width: 100%;
+   width: 305px;
    order: 1;
   }
  }

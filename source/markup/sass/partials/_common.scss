@@ -6,7 +6,8 @@ body .main {
   line-height: 144%;
   font-weight: 900;
   @include mobile {
-   font-size: 38px;
+   font-size: 32px;
+   font-size: 7.75vw;
   }
 
   &.title-big--white {
@@ -27,35 +28,39 @@ body .main {
 
  .logo {
   width: 214px;
+  width: 12.1vw;
   height: 33px;
+  height: 2vw;
   display: block;
   background: url(../img/logo.png) no-repeat center / contain;
-  @include fullhd {
-   width: 232px;
-   height: 36px;
-  }
-  @include mobile {
+  @include tablet-mobile {
    width: 96px;
+   width: 24vw;
    height: 16px;
+   height: 5vw;
   }
+  //@include mobile {
+  // width: 96px;
+  // height: 16px;
+  //}
  }
 }
 
 .scroll-mouse {
- width: 35px;
- height: 72px;
- background: url(../img/common/scroll-mouse.svg) no-repeat center / contain;
- position: absolute;
- bottom: 66px;
- left: 30px;
- opacity: 0.33;
- @include laptop {
-  width: 25px;
-  height: 60px;
-  bottom: 30px;
-  left: 15px;
- }
- @include tablet-mobile {
-  display: none;
- }
+width: 35px;
+height: 72px;
+background: url(../img/common/scroll-mouse.svg) no-repeat center / contain;
+position: absolute;
+bottom: 66px;
+left: 30px;
+opacity: 0.33;
+@include laptop {
+width: 25px;
+height: 60px;
+bottom: 30px;
+left: 15px;
+}
+@include tablet-mobile {
+display: none;
+}
 }

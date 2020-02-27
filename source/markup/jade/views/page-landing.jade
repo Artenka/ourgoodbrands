@@ -40,7 +40,13 @@ body
                 verticalCentered: false,
                 menu: '#menu',
                 scrollOverflow: true,
-                afterResize: function () {
+                //responsive: 1240,
+                afterResize: function (width, height) {
+                  //if (width <= 1240) {
+                  //  $.fn.fullpage.destroy('all');
+                  //} else {
+                  //  $.fn.fullpage.reBuild();
+                  //}
                   $.fn.fullpage.reBuild();
                 },
                 onLeave: function (origin, destination, direction) {
@@ -56,3 +62,24 @@ body
               });
             }
           })
+
+          var attached = false;//track it's current state
+          manageFullPage();
+
+          $(window).resize(function () {
+            manageFullPage();
+          })
+
+          function manageFullPage() {
+            if ($(this).width() > 1240) {
+              if (!attached) {
+                $('#fullpage').fullpage();
+                attached = true;//note it's been attached
+              }
+            } else {//we don't want fullpage. destroy it if it's attached
+              if (attached) {
+                attached = false;//mark destroyed
+                $.fn.fullpage.destroy('all');
+              }
+            }
+          }

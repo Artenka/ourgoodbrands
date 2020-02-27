@@ -5,7 +5,7 @@
 .landing-brand-layout {
  min-height: 100vh;
  background: url(../img/landing/brand/brand-bg.svg) no-repeat center bottom / cover, #fff;
- @include mobile {
+ @include tablet-mobile {
   background: url(../img/landing/brand/brand-bg-mobile.svg) no-repeat center top / contain, #fff;
  }
 
@@ -17,10 +17,11 @@
   justify-content: center;
   text-align: right;
   padding: 240px 0 63px;
-  @include mobile {
+  @include tablet-mobile {
    align-items: flex-start;
    text-align: left;
-   padding: 511px 0 79px;
+   //padding: 511px 0 79px;
+   padding: 123vw 0 19vw;
   }
  }
 }
@@ -29,8 +30,9 @@
 
  .landing-brand__title {
   max-width: 500px;
-  @include mobile {
-   font-size: 32px;
+  @include tablet-mobile {
+   max-width: 270px;
+   max-width: 65vw;
   }
  }
 
@@ -39,17 +41,22 @@
   font-size: 24px;
   font-weight: 500;
   margin: 35px 0 0 auto;
-  @include mobile {
+  @include tablet-mobile {
+   max-width: 310px;
+   max-width: 72.5vw;
    font-size: 21px;
+   font-size: 5.05vw;
    font-weight: 300;
-   margin-top: 12px;
+   margin: 12px 0 0;
+   margin: 3.6vw 0 0;
   }
  }
 
  .landing-brand__btn {
   margin-top: 50px;
-  @include mobile {
+  @include tablet-mobile {
    margin-top: 40px;
+   margin-top: 10vw;
   }
  }
 }
