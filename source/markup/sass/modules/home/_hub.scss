@@ -27,7 +27,8 @@
 }
 
 .home-hub {
- max-width: 1170px;
+ //max-width: 1170px;
+ width: 1170px;
  min-height: 846px;
  display: flex;
  align-items: center;
@@ -36,6 +37,9 @@
  margin: 0 auto;
  position: relative;
  z-index: 2;
+ @include tablet-mobile {
+  left: auto;
+ }
  @include tablet {
   max-width: 710px;
   padding: 110px 0 100px 0;

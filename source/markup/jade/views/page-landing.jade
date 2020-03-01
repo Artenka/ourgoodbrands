@@ -19,7 +19,6 @@ body
       #tie-wrapper
         .main#landing
           include ../partials/landing/menu
-          include ../partials/landing/header
           include ../partials/fixed-socials
 
           .fullpage-layout#fullpage
@@ -33,33 +32,8 @@ body
           $ = jQuery.noConflict();
           $(function(){
             // fullpage script
-            if ($(window).width() > 720) {
-              var slideIndex = 1, sliding = false;
-              $('#fullpage').fullpage({
-                anchors: ['intro', 'score', 'brand'],
-                verticalCentered: false,
-                menu: '#menu',
-                scrollOverflow: true,
-                //responsive: 1240,
-                afterResize: function (width, height) {
-                  //if (width <= 1240) {
-                  //  $.fn.fullpage.destroy('all');
-                  //} else {
-                  //  $.fn.fullpage.reBuild();
-                  //}
-                  $.fn.fullpage.reBuild();
-                },
-                onLeave: function (origin, destination, direction) {
-                  console.log(destination.index);
-                  if(destination.index === 0) {
-                    $('.fixed-socials').removeClass('fixed-socials--black');
-                    $('.main-header-landing').removeClass('main-header-landing--black');
-                  } else {
-                    $('.fixed-socials').addClass('fixed-socials--black');
-                    $('.main-header-landing').addClass('main-header-landing--black');
-                  }
-                }
-              });
+            if ($(window).width() > 1240) {
+              fullpageInit();
             }
           })
 
@@ -70,10 +44,38 @@ body
             manageFullPage();
           })
 
+          function fullpageInit() {
+            $('#fullpage').fullpage({
+              anchors: ['intro', 'score', 'brand'],
+              verticalCentered: false,
+              menu: '#menu',
+              scrollOverflow: true,
+              //responsive: 1240,
+              afterResize: function (width, height) {
+                //if (width <= 1240) {
+                //  $.fn.fullpage.destroy('all');
+                //} else {
+                //  $.fn.fullpage.reBuild();
+                //}
+                $.fn.fullpage.reBuild();
+              },
+              onLeave: function (origin, destination, direction) {
+                console.log(destination.index);
+                if (destination.index === 0) {
+                  $('.fixed-socials').removeClass('fixed-socials--black');
+                  $('.main-header-landing').removeClass('main-header-landing--black');
+                } else {
+                  $('.fixed-socials').addClass('fixed-socials--black');
+                  $('.main-header-landing').addClass('main-header-landing--black');
+                }
+              }
+            });
+          }
+
           function manageFullPage() {
             if ($(this).width() > 1240) {
               if (!attached) {
-                $('#fullpage').fullpage();
+                fullpageInit();
                 attached = true;//note it's been attached
               }
             } else {//we don't want fullpage. destroy it if it's attached
