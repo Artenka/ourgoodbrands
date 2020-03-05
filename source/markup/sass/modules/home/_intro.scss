@@ -77,10 +77,11 @@
 
 
 .home-intro-articles {
+ max-width: 1290px;
  //width: 1920px;
  //display: flex;
  //align-items: center;
- margin: -150px 0 0;
+ margin: -150px auto 0;
  position: relative;
  //left: calc(50% - 960px);
  @include tablet {
@@ -115,29 +116,22 @@
  &.slick-1 {
 
   .slick-arrow {
-   top: 245px;
+   top: calc(50% - 100px);
+   //top: 245px;
    @include mobile {
     top: 180px;
    }
 
-   //&.slick-prev {
-   // left: 323px;
-   // @include tablet {
-   //  left: 223px;
-   // }
-   // @include mobile {
-   //  left: 150px;
-   // }
-   //}
-   //&.slick-next {
-   // right: 323px;
-   // @include tablet {
-   //  right: 223px;
-   // }
-   // @include mobile {
-   //  right: 160px;
-   // }
-   //}
+   &.slick-prev {
+    @include desktop {
+     left: -25px;
+    }
+   }
+   &.slick-next {
+    @include desktop {
+     right: -25px;
+    }
+   }
   }
  }
 }

@@ -1,16 +1,21 @@
 .section.section-home-intro
+  | <?php $featuredArticle = get_field('main_article_post'); ?>
+  | <?php $featuredArticleAuthorId = get_post_field ('post_author', $featuredArticle); ?>
+
   .home-intro
-    .home-banner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/banner.jpg)")
+    <?php if($featuredArticle): ?>
+    .home-banner(style!="background-image: url(<?= get_the_post_thumbnail_url( $featuredArticle, 'full' ) ?>)")
       .main-wrapper
         h3.home-banner__subtitle FEATURE ARTICLE
-        h2.home-banner__title FinorX sustainable fashion with African culture
+        h2.home-banner__title <?= get_the_title($featuredArticle); ?>
         ul.home-banner__tags
           li.home-banner__tag
             i.icon-user
-            | Ourgoodbrands
+            | <?= get_the_author_meta( 'display_name' , $featuredArticleAuthorId ); ?>
           li.home-banner__tag
             i.ion-ios-clock-outline
-            | October 31, 2019
+            | <?= get_the_date( 'F j, Y', $featuredArticle ) ?>
+    <?php endif; ?>
 
     .main-wrapper
       .home-intro-articles.slick-1

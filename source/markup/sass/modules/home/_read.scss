@@ -1,7 +1,8 @@
 .section-home-read {
  background: url(../img/home/read/read-bg.svg) no-repeat center top / cover;
- padding: 214px 0 117px;
- margin-top: -400px;
+ padding: 15.63vw 0 6.09vw;
+ //padding: 300px 0 117px;
+ margin-top: -20.83vw;
  position: relative;
  z-index: 2;
  @include mobile {
@@ -34,9 +35,13 @@
 .read-list {
  width: calc(100% + 64px);
  //display: flex;
- margin-top: 60px;
+ margin-top: 48px;
  position: relative;
  left: -32px;
+ @include fullhd {
+  width: calc(100% + 8vw);
+  left: -4vw;
+ }
  @include mobile {
   width: 292px;
   margin-top: 29px;
@@ -55,22 +60,41 @@
    //top: 180px;
 
    &.slick-prev {
-    left: -23px;
+    left: -13px;
+    @include fullhd {
+     left: calc(4vw - 45px);
+    }
    }
    &.slick-next {
-    right: -23px;
+    right: -13px;
+    @include fullhd {
+     right: calc(4vw - 45px);
+    }
    }
   }
  }
 }
 
+.read-item-slide {
+ padding: 0 32px;
+ @include fullhd {
+  padding: 0 4vw;
+ }
+ @include mobile {
+  padding: 0 24px 0 0;
+ }
+}
+
 .read-item {
+ max-width: 280px;
  //width: 235px;
  display: block;
- margin: 0 32px;
+ margin: 0 auto;
+ @include tablet-mobile {
+  max-width: 100%;
+ }
  @include mobile {
   width: 122px;
-  margin: 0 24px 0 0;
  }
  &:hover {
 

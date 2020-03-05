@@ -1,5 +1,7 @@
 .section-home-hub {
- padding: 33px 0 282px;
+ background: url(../img/home/hub/hub-bg-bottom.svg) no-repeat center bottom / 100% auto;
+ padding: 10.26vw 0 19.84vw;
+ //padding: 197px 0 381px;
  @include mobile {
   padding: 0 0 35px;
   margin-top: -40px;
@@ -10,12 +12,12 @@
  position: relative;
  &:before {
   content: '';
-  width: 1254px;
-  height: 930px;
-  background: url(../img/home/hub/arrow-icon.png) no-repeat top 110px right 42px, url(../img/home/hub/hub-bg.png) no-repeat center / contain;
+  width: 1188px;
+  height: 880px;
+  background: url(../img/home/hub/arrow-icon.png) no-repeat top 96px right 40px, url(../img/home/hub/hub-bg.png) no-repeat center / contain;
   position: absolute;
-  top: calc(50% - 465px);
-  left: calc(50% - 627px);
+  top: calc(50% - 400px);
+  left: calc(50% - 594px);
   @include mobile {
    width: 426px;
    height: 1124px;
@@ -28,16 +30,17 @@
 
 .home-hub {
  //max-width: 1170px;
- width: 1170px;
- min-height: 846px;
+ width: 1110px;
+ min-height: 756px;
  display: flex;
  align-items: center;
  justify-content: space-between;
- padding: 110px 100px 100px 55px;
+ padding: 145px 80px 67px 50px;
  margin: 0 auto;
  position: relative;
  z-index: 2;
  @include tablet-mobile {
+  width: auto;
   left: auto;
  }
  @include tablet {
@@ -68,7 +71,7 @@
  }
 
  .home-hub__content {
-  width: 505px;
+  width: 490px;
   text-align: center;
   @include tablet {
    width: 350px;
@@ -81,10 +84,10 @@
 
  .home-hub__title {
   font-family: Lato, sans-serif;
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 700;
-  letter-spacing: 2.4px;
   line-height: 54px;
+  letter-spacing: 1.8px;
   @include tablet {
    font-size: 24px;
    line-height: 30px;
@@ -97,10 +100,10 @@
  }
  .home-hub__text {
   font-family: Poppins, sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 40px;
-  margin-top: 8px;
+  line-height: 222%;
+  margin-top: 24px;
   @include tablet-mobile {
    font-size: 16px;
    line-height: 32px;
@@ -111,7 +114,7 @@
  }
 
  .home-hub__btn {
-  margin-top: 33px;
+  margin-top: 40px;
   @include mobile {
    margin-top: 10px;
   }

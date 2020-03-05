@@ -5,10 +5,14 @@
 | ?>
 | <?php get_header('new'); ?>
 
-body
+body#home-page
   .background-overlay
     #tie-container.site.tie-container
       #tie-wrapper
+        | <?php
+        | TIELABS_HELPER::get_template_part( 'templates/header/load' );
+        | do_action( 'TieLabs/before_main_content' );
+        | ?>
         .main#home
           include ../pages-partials/home/intro
           include ../pages-partials/home/guides
