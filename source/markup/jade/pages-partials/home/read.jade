@@ -1,9 +1,26 @@
 .section.section-home-read
   .main-wrapper
     .home-read
-      h2.title-big Read
+      h2.title-big <?= get_field('read_title', $pageID); ?>
 
       .read-list.slick-1
+        | <?php
+        | query_posts(array(
+        |  'showposts' => -1,
+        |  'category_name' => 'read'
+        | ));
+        | while (have_posts()) : the_post();
+        | ?>
+        .read-item-slide
+          a(href="<?= the_permalink(); ?>").read-item
+            .read-item__thumb
+              .read-item__thumb-inner(style!="background-image: url(<?= get_the_post_thumbnail_url() ?>)")
+            h2.read-item__title <?= the_title(); ?>
+            p.read-item__text <?= get_the_excerpt(); ?>
+        | <?php
+        | endwhile;
+        | wp_reset_postdata();
+        | ?>
         .read-item-slide
           a(href="#").read-item
             .read-item__thumb

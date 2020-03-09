@@ -1,0 +1,35 @@
+#subscribe-bar.subscribe-bar
+  .subscribe-bar__close
+  .main-wrapper
+    p.subscribe-bar__text
+      i
+      | Join Our Monthly Newsletter
+    .email-form.email-form--sm
+      form
+        input(type="email" placeholder="Email address")
+        button(type="submit") GO!
+
+
+script.
+  $ = jQuery.noConflict();
+  $(function(){
+    //if($('#main-nav').length) {
+    //  $($('#subscribe-bar').detach()).prependTo("#main-nav");
+    //}
+
+    $('.subscribe-bar__close').click(function () {
+      $('.subscribe-bar').slideUp(200);
+      $('#main-nav').css('top', 0);
+    });
+
+    var headerContainerHeight = $('.header-container').outerHeight();
+    var $subscribeBar = $('.subscribe-bar');
+    $(window).scroll(function () {
+      var $this = $(this);
+      if ($this.scrollTop() > headerContainerHeight) {
+        $subscribeBar.addClass('subscribe-bar--fixed');
+      } else {
+        $subscribeBar.removeClass('subscribe-bar--fixed');
+      }
+    });
+  })

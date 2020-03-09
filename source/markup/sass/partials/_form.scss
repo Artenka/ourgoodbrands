@@ -1,4 +1,4 @@
-.main {
+body {
 
  .email-form {
   width: 255px;
@@ -36,6 +36,27 @@
    right: 6px;
    z-index: 2;
    cursor: pointer;
+  }
+
+  &.email-form--sm {
+   width: 200px;
+
+   input, textarea, select, .input, .textarea, .select {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 7px;
+   }
+
+   input {
+    padding-right: 50px;
+   }
+
+   button {
+    line-height: 26px;
+    padding: 0 5px;
+    top: 4px;
+    right: 4px;
+   }
   }
  }
 }

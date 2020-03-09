@@ -1,0 +1,75 @@
+.subscribe-bar {
+ width: 100%;
+ display: block;
+ border-bottom: 1px solid #ebebe7;
+ background: #F9F9F9;
+ padding: 15px 0;
+ position: fixed;
+ top: 0;
+ z-index: -1;
+ opacity: 0;
+ transition: 0.4s;
+ @include tablet-mobile {
+  display: none;
+ }
+
+ .main-wrapper {
+  width: 81%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 auto;
+ }
+
+ .subscribe-bar__text {
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.525px;
+  color: #656266;
+  margin-right: 70px;
+
+  i {
+   width: 20px;
+   height: 17px;
+   display: inline-block;
+   vertical-align: middle;
+   background: url(../img/common/envelope.svg) no-repeat center / contain;
+   margin-right: 10px;
+  }
+ }
+
+ .subscribe-bar__close {
+  width: 14px;
+  height: 14px;
+  background: url(../img/common/close-1.svg) no-repeat center / contain;
+  position: absolute;
+  top: calc(50% - 7px);
+  right: 25px;
+  cursor: pointer;
+ }
+
+ &.subscribe-bar--fixed {
+  opacity: 1;
+  z-index: 999;
+ }
+}
+
+//.main-nav {
+// .subscribe-bar {
+//  height: 0;
+//  display: none;
+//  position: relative;
+// }
+//
+// &:not(.fixed-top){
+//
+//  .subscribe-bar {
+//   height: auto;
+//   display: block;
+//   @include tablet-mobile {
+//    display: none;
+//   }
+//  }
+// }
+//}

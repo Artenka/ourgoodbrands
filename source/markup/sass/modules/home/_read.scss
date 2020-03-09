@@ -58,6 +58,12 @@
 
   .slick-arrow {
    //top: 180px;
+   @include desktop {
+    top: calc(12.22vw - 10px);
+   }
+   @include fullhd {
+    top: calc(10.31vw - 11px);
+   }
 
    &.slick-prev {
     left: -13px;

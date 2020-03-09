@@ -4,14 +4,20 @@
 | */
 | ?>
 | <?php get_header('new'); ?>
+| <?php
+| $page = get_pages(array(
+|   'meta_value' => 'page-home.php'
+| ));
+| $pageID = $page[0]->ID;
+| ?>
 
 body#home-page
   .background-overlay
     #tie-container.site.tie-container
       #tie-wrapper
         | <?php
-        | TIELABS_HELPER::get_template_part( 'templates/header/load' );
-        | do_action( 'TieLabs/before_main_content' );
+        | /*TIELABS_HELPER::get_template_part( 'templates/header/load' );
+        | do_action( 'TieLabs/before_main_content' );*/
         | ?>
         .main#home
           include ../pages-partials/home/intro
@@ -23,4 +29,5 @@ body#home-page
 
 
           include ../partials/footer
+          include ../partials/subscribe-bar
           | <?php get_footer('new'); ?>

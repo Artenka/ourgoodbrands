@@ -1,37 +1,60 @@
 .section.section-home-partners
   .main-wrapper
     .home-partners
-      h2.title-big Partners
+      h2.title-big <?= get_field('partners_title', $pageID); ?>
 
+      | <?php
+      | $partnersLogos = get_field('partners_logos', $pageID);
+      | //var_dump($partnersLogos);
+      | ?>
       .home-partners-layout
-        .home-partners-box
-          .partners-item.partners-item--sm(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-1.png)")
-          .partners-item.partners-item--sm(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-2.png)")
-          .partners-item(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-3.png)")
-          .partners-item(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-4.png)")
-          .partners-item.partners-item--md(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-5.png)")
-          .partners-item.partners-item--md(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-6.png)")
+        .home-partners-box-slider.slick-1
+          | <?php
+          | echo '<div class="home-partners-box-slide"><div class="home-partners-box">';
+          | $i = 1;
+          | $itemClass = 'partners-item';
+          | foreach ($partnersLogos as $key => $value):
+          | $i++;
+          | if($i%6 === 0) echo '</div></div><div class="home-partners-box-slide"><div class="home-partners-box">';
+          | if($value['big']) { $itemClass = 'partners-item partners-item--md'; } else { $itemClass = 'partners-item'; }
+          | ?>
+          div(class!="<?= $itemClass ?>" style!="background-image: url(<?= $value['logo']; ?>)")
+          | <?php endforeach; ?>
+          | </div></div>
+          //.home-partners-box-slide
+          //  .home-partners-box
+          //    .partners-item(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-1.png)")
+          //    .partners-item(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-2.png)")
+          //    .partners-item(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-3.png)")
+          //    .partners-item(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-4.png)")
+          //    .partners-item.partners-item--md(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-5.png)")
+          //    .partners-item.partners-item--md(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-6.png)")
+          //.home-partners-box-slide
+          //  .home-partners-box
+          //    .partners-item(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-1.png)")
+          //    .partners-item(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-2.png)")
+          //    .partners-item(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-3.png)")
+          //    .partners-item(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-4.png)")
+          //    .partners-item.partners-item--md(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-5.png)")
+          //    .partners-item.partners-item--md(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-item-6.png)")
         .home-partners-slider.slick-1
+          | <?php foreach ($partnersLogos as $key => $value): ?>
           .home-partners-slide
             .home-partners-slide__inner
-              .home-partner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-1.png)")
-          .home-partners-slide
-            .home-partners-slide__inner
-              .home-partner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-2.png)")
-          .home-partners-slide
-            .home-partners-slide__inner
-              .home-partner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-3.png)")
-          .home-partners-slide
-            .home-partners-slide__inner
-              .home-partner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-3.png)")
-          .home-partners-slide
-            .home-partners-slide__inner
-              .home-partner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/partners/partner-3.png)")
+              .home-partner(style!="background-image: url(<?= $value['logo']; ?>)")
+          | <?php endforeach; ?>
 
 
   script.
     $ = jQuery.noConflict();
     $(function () {
+      $('.home-partners-box-slider').slick({
+        slidesToShow: 1,
+        arrows: true,
+        autoplay: false,
+        swipe: true,
+        infinite: false
+      })
       $('.home-partners-slider').slick({
         slidesToShow: 3,
         arrows: true,

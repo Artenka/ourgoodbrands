@@ -14,7 +14,7 @@
   content: '';
   width: 1188px;
   height: 880px;
-  background: url(../img/home/hub/arrow-icon.png) no-repeat top 96px right 40px, url(../img/home/hub/hub-bg.png) no-repeat center / contain;
+  background: url(../img/home/hub/arrow-icon.png) no-repeat top 96px right 40px, url(../img/home/hub/hub-bg.svg) no-repeat center / contain;
   position: absolute;
   top: calc(50% - 400px);
   left: calc(50% - 594px);
@@ -35,7 +35,7 @@
  display: flex;
  align-items: center;
  justify-content: space-between;
- padding: 145px 80px 67px 50px;
+ padding: 170px 80px 42px 50px;
  margin: 0 auto;
  position: relative;
  z-index: 2;
@@ -103,7 +103,7 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 222%;
-  margin-top: 24px;
+  margin-top: 77px;
   @include tablet-mobile {
    font-size: 16px;
    line-height: 32px;

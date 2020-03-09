@@ -16,7 +16,8 @@
   left: 0;
   @include mobile {
    height: 15px;
-   background: url(../img/home/movies/border-top-mobile.svg) repeat-x center top;
+   background: url(../img/home/movies/border-top.svg) repeat-x center top / auto 15px;
+   //background: url(../img/home/movies/border-top-mobile.svg) repeat-x center top;
    top: -12px;
   }
  }
@@ -54,6 +55,7 @@
    @include desktop {
     width: 95px;
     height: 28px;
+    top: calc(9.9vw - 14px);
    }
    //top: 132px;
    //@include mobile {

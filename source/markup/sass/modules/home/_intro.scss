@@ -16,6 +16,7 @@
  padding: 7vw 0 12vw;
  @include mobile {
   min-height: 400px;
+  background-attachment: initial;
   padding: 60px 0 120px;
  }
 
@@ -234,7 +235,7 @@
  }
  .home-intro-article__tag {
   color: #fd8278;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
   margin-right: 20px;

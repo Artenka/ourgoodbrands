@@ -4,6 +4,13 @@
   max-width: 100%;
   margin: 0;
  }
+
+ .theme-header .fixed-nav {
+  top: 64px;
+  @include tablet-mobile {
+   top: 0;
+  }
+ }
 }
 
 #home.main {

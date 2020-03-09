@@ -1,12 +1,12 @@
 .section.section-home-intro
-  | <?php $featuredArticle = get_field('main_article_post'); ?>
+  | <?php $featuredArticle = get_field('main_article_post', $pageID); ?>
   | <?php $featuredArticleAuthorId = get_post_field ('post_author', $featuredArticle); ?>
 
   .home-intro
     <?php if($featuredArticle): ?>
     .home-banner(style!="background-image: url(<?= get_the_post_thumbnail_url( $featuredArticle, 'full' ) ?>)")
       .main-wrapper
-        h3.home-banner__subtitle FEATURE ARTICLE
+        h3.home-banner__subtitle <?= get_field('featured_title', $pageID); ?>
         h2.home-banner__title <?= get_the_title($featuredArticle); ?>
         ul.home-banner__tags
           li.home-banner__tag

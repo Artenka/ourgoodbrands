@@ -1,10 +1,26 @@
 .section.section-home-movies
   .main-wrapper
     .home-movies
-      h2.title-big Watch
-      h3.subtitle Stay tunned with the latest eco-social trends.
+      h2.title-big <?= get_field('movies_title', $pageID); ?>
+      h3.subtitle <?= get_field('movies_subtitle', $pageID); ?>
 
       .home-movies-list.slick-1
+        | <?php
+        | query_posts(array(
+        |  'showposts' => -1,
+        |  'category_name' => 'movies'
+        | ));
+        | while (have_posts()) : the_post();
+        | ?>
+        a(href!="<?= the_permalink(); ?>").home-movie
+          .home-movie__thumb
+            .home-movie__thumb-inner(style!="background-image: url(<?= get_the_post_thumbnail_url() ?>)")
+          h3.home-movie__tag <?= the_title(); ?>
+          p.home-movie__text <?= get_the_excerpt(); ?>
+        | <?php
+        | endwhile;
+        | wp_reset_postdata();
+        | ?>
         a(href="#").home-movie
           .home-movie__thumb
             .home-movie__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/movies/movie-thumb.jpg)")
