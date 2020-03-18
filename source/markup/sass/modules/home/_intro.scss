@@ -78,13 +78,17 @@
 
 
 .home-intro-articles {
- max-width: 1290px;
  //width: 1920px;
  //display: flex;
  //align-items: center;
  margin: -150px auto 0;
  position: relative;
  //left: calc(50% - 960px);
+ @include desktop {
+  max-width: 1175px;
+  width: 62vw;
+  margin-top: -12.71vw;
+ }
  @include tablet {
   //width: 1240px;
   //left: calc(50% - 620px);
@@ -190,7 +194,7 @@
   @extend .thumb-shadow;
   //height: 280px;
   border-radius: 20px 20px 0 0;
-  padding-bottom: 78%;
+  padding-bottom: 75%;
   position: relative;
   overflow: hidden;
   @include mobile {
@@ -206,26 +210,40 @@
  }
 
  .home-intro-article__content {
-  padding: 37px 22px 33px;
+  padding: 35px 22px 31px;
   position: relative;
+  @include desktop {
+   padding: 1.82vw 1.15vw 1.61vw;
+  }
  }
 
  .home-intro-article__author {
   width: 52px;
   height: 52px;
+  background: no-repeat center / cover;
   border-radius: 50%;
   position: absolute;
   top: -27px;
   left: 22px;
   z-index: 3;
+  @include desktop {
+   width: 2.7vw;
+   height: 2.7vw;
+   top: -1.4vw;
+   left: 1.14vw;
+  }
  }
 
  .home-intro-article__name {
   color: #030303;
   font-size: 18px;
   font-weight: 500;
-  line-height: 27px;
+  line-height: 150%;
   letter-spacing: -0.29px;
+  @include desktop {
+   font-size: 0.93vw;
+
+  }
  }
 
  .home-intro-article__tags {
@@ -236,9 +254,13 @@
  .home-intro-article__tag {
   color: #fd8278;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 128%;
   text-transform: uppercase;
   margin-right: 20px;
+  @include desktop {
+   font-size: 0.73vw;
+   margin-right: 1.04vw;
+  }
   &:last-child {
    margin-right: 0;
   }
@@ -254,7 +276,11 @@
   font-family: 'SF UI Text', sans-serif;
   font-size: 16px;
   letter-spacing: -0.26px;
-  line-height: 22px;
-  margin-top: 12px;
+  line-height: 137.5%;
+  margin-top: 10px;
+  @include desktop {
+   font-size: 0.83vw;
+   margin-top: 0.52vw;
+  }
  }
 }

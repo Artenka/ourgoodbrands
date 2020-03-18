@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1444" height="382" viewBox="0 0 1444 382"><g><g><path fill="#fd8278" d="M0 0l1444 97.137V382H3z"/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="385px" viewBox="0 0 1920 385" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Footer" fill="#FD8278">
+            <g transform="translate(0.000000, -1.000000)" id="Our-mission">
+                <g transform="translate(0.000000, 0.137081)">
+                    <polygon id="Rectangle" points="2.5313085e-13 0.862918509 1920 101 1920 385.862919 4.26325641e-13 385.862919"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

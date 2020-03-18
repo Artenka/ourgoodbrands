@@ -19,90 +19,46 @@
 
     .main-wrapper
       .home-intro-articles.slick-1
+        | <?php
+        | $category_intro = get_field('intro_category', $pageID);
+        | $sort_order_intro = get_field('intro_sort_order', $pageID);
+        | $order_intro = 'DESC';
+        | if($sort_order_intro === 'recent') {
+        | $orderby_intro = 'publish_date';
+        | } else if($sort_order_intro === 'random') {
+        | $orderby_intro = 'rand';
+        | } else if($sort_order_intro === 'modified') {
+        | $orderby_intro = 'modified';
+        | } else if($sort_order_intro === 'most_commented') {
+        | $orderby_intro = 'comment_count';
+        | } else if($sort_order_intro === 'alphabetically') {
+        | $orderby_intro = 'title';
+        | $order_intro = 'ASC';
+        | }
+        | $args = array(
+        | 'showposts' => -1,
+        | 'cat' => $category_intro,
+        | 'orderby' => $orderby_intro,
+        | 'order' => $order_intro
+        | );
+        | $wp_query = new WP_Query( $args );
+        | while ($wp_query->have_posts()) : $wp_query->the_post();
+        | $introArticleAuthorId = get_post_field ('post_author');
+        | ?>
         .home-intro-article-slide
           .home-intro-article-layout
-            a(href="#").home-intro-article
+            a(href!="<?= the_permalink(); ?>").home-intro-article
               .home-intro-article__thumb
-                .home-intro-article__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article.jpg)")
+                .home-intro-article__thumb-inner(style!="background-image: url(<?= get_the_post_thumbnail_url(); ?>)")
               .home-intro-article__content
-                .home-intro-article__author(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article-author.png)")
-                h3.home-intro-article__name Quick Brown Fox Jumps Over
+                .home-intro-article__author(style!="background-image: url(<?= get_avatar_url($introArticleAuthorId); ?>)")
+                h3.home-intro-article__name <?= the_title(); ?>
                 .home-intro-article__tags
-                  .home-intro-article__tag ZERO WASTE
-                  .home-intro-article__tag.home-intro-article__tag--date 16 MAY 2016
-                p.home-intro-article__text Synth polaroid bitters chillwave pickled. Vegan disrupt tousled, Portland keffiyeh aesthetic food truck sriracha cornhole single-origin coffee church key roof party. Leggings ethical McSweeney’s.
-        .home-intro-article-slide
-          .home-intro-article-layout
-            a(href="#").home-intro-article
-              .home-intro-article__thumb
-                .home-intro-article__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article.jpg)")
-              .home-intro-article__content
-                .home-intro-article__author(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article-author.png)")
-                h3.home-intro-article__name Quick Brown Fox Jumps Over
-                .home-intro-article__tags
-                  .home-intro-article__tag ZERO WASTE
-                  .home-intro-article__tag.home-intro-article__tag--date 16 MAY 2016
-                p.home-intro-article__text Synth polaroid bitters chillwave pickled. Vegan disrupt tousled, Portland keffiyeh aesthetic food truck sriracha cornhole single-origin coffee church key roof party. Leggings ethical McSweeney’s.
-        .home-intro-article-slide
-          .home-intro-article-layout
-            a(href="#").home-intro-article
-              .home-intro-article__thumb
-                .home-intro-article__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article.jpg)")
-              .home-intro-article__content
-                .home-intro-article__author(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article-author.png)")
-                h3.home-intro-article__name Quick Brown Fox Jumps Over
-                .home-intro-article__tags
-                  .home-intro-article__tag ZERO WASTE
-                  .home-intro-article__tag.home-intro-article__tag--date 16 MAY 2016
-                p.home-intro-article__text Synth polaroid bitters chillwave pickled. Vegan disrupt tousled, Portland keffiyeh aesthetic food truck sriracha cornhole single-origin coffee church key roof party. Leggings ethical McSweeney’s.
-        .home-intro-article-slide
-          .home-intro-article-layout
-            a(href="#").home-intro-article
-              .home-intro-article__thumb
-                .home-intro-article__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article.jpg)")
-              .home-intro-article__content
-                .home-intro-article__author(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article-author.png)")
-                h3.home-intro-article__name Quick Brown Fox Jumps Over
-                .home-intro-article__tags
-                  .home-intro-article__tag ZERO WASTE
-                  .home-intro-article__tag.home-intro-article__tag--date 16 MAY 2016
-                p.home-intro-article__text Synth polaroid bitters chillwave pickled. Vegan disrupt tousled, Portland keffiyeh aesthetic food truck sriracha cornhole single-origin coffee church key roof party. Leggings ethical McSweeney’s.
-        .home-intro-article-slide
-          .home-intro-article-layout
-            a(href="#").home-intro-article
-              .home-intro-article__thumb
-                .home-intro-article__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article.jpg)")
-              .home-intro-article__content
-                .home-intro-article__author(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article-author.png)")
-                h3.home-intro-article__name Quick Brown Fox Jumps Over
-                .home-intro-article__tags
-                  .home-intro-article__tag ZERO WASTE
-                  .home-intro-article__tag.home-intro-article__tag--date 16 MAY 2016
-                p.home-intro-article__text Synth polaroid bitters chillwave pickled. Vegan disrupt tousled, Portland keffiyeh aesthetic food truck sriracha cornhole single-origin coffee church key roof party. Leggings ethical McSweeney’s.
-        .home-intro-article-slide
-          .home-intro-article-layout
-            a(href="#").home-intro-article
-              .home-intro-article__thumb
-                .home-intro-article__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article.jpg)")
-              .home-intro-article__content
-                .home-intro-article__author(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article-author.png)")
-                h3.home-intro-article__name Quick Brown Fox Jumps Over
-                .home-intro-article__tags
-                  .home-intro-article__tag ZERO WASTE
-                  .home-intro-article__tag.home-intro-article__tag--date 16 MAY 2016
-                p.home-intro-article__text Synth polaroid bitters chillwave pickled. Vegan disrupt tousled, Portland keffiyeh aesthetic food truck sriracha cornhole single-origin coffee church key roof party. Leggings ethical McSweeney’s.
-        .home-intro-article-slide
-          .home-intro-article-layout
-            a(href="#").home-intro-article
-              .home-intro-article__thumb
-                .home-intro-article__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article.jpg)")
-              .home-intro-article__content
-                .home-intro-article__author(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/intro/intro-article-author.png)")
-                h3.home-intro-article__name Quick Brown Fox Jumps Over
-                .home-intro-article__tags
-                  .home-intro-article__tag ZERO WASTE
-                  .home-intro-article__tag.home-intro-article__tag--date 16 MAY 2016
-                p.home-intro-article__text Synth polaroid bitters chillwave pickled. Vegan disrupt tousled, Portland keffiyeh aesthetic food truck sriracha cornhole single-origin coffee church key roof party. Leggings ethical McSweeney’s.
+                  .home-intro-article__tag <?= get_the_category()[0]->cat_name; ?>
+                  .home-intro-article__tag.home-intro-article__tag--date <?= get_the_date( 'j F Y' ) ?>
+                p.home-intro-article__text <?= get_the_excerpt(); ?>
+        | <?php endwhile; wp_reset_query(); ?>
+
 
 
   script.

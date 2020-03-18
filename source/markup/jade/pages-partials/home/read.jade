@@ -19,7 +19,7 @@
             p.read-item__text <?= get_the_excerpt(); ?>
         | <?php
         | endwhile;
-        | wp_reset_postdata();
+        | wp_reset_query();
         | ?>
         .read-item-slide
           a(href="#").read-item

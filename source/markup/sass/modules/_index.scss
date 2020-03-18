@@ -6,6 +6,15 @@ html {
  }
 }
 
+body {
+ background: #fff!important;
+}
+
+.main-wrapper {
+ max-width: 90%;
+ margin: 0 auto;
+}
+
 .main {
  background: #fff;
  font-family: Poppins, sans-serif;
@@ -38,6 +47,18 @@ html {
    @include tablet-mobile {
     padding: 0;
    }
+  }
+ }
+
+ .footer-outro-links {
+  &:before, &:after {
+   width: 9.5vw;
+  }
+  &:before {
+   left: -9.5vw;
+  }
+  &:after {
+   right: -9.5vw;
   }
  }
 

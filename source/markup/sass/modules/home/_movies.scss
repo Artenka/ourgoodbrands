@@ -24,6 +24,10 @@
 }
 
 .home-movies {
+ @include desktop {
+  width: 71.46vw;
+  margin: 0 auto;
+ }
 
  .title-big, .subtitle {
   color: #fff;
@@ -37,6 +41,11 @@
  margin: 46px 0 0;
  position: relative;
  left: -20px;
+ @include desktop {
+  width: calc(100% + 2vw);
+  margin-top: 2.4vw;
+  left: -1vw;
+ }
  @include mobile {
   width: calc(100% + 24px);
   margin-top: 19px;
@@ -52,10 +61,13 @@
   }
 
   .slick-arrow {
+   width: 86px;
+   height: 25px;
+   top: calc(9.9vw - 12px);
    @include desktop {
-    width: 95px;
-    height: 28px;
-    top: calc(9.9vw - 14px);
+    width: 4.48vw;
+    height: 1.3vw;
+    top: 9.25vw;
    }
    //top: 132px;
    //@include mobile {
@@ -64,9 +76,15 @@
 
    &.slick-prev {
     left: -34px;
+    @include desktop {
+     left: -1.77vw;
+    }
    }
    &.slick-next {
     right: -34px;
+    @include desktop {
+     right: -1.77vw;
+    }
    }
   }
  }
@@ -75,6 +93,9 @@
 .home-movie {
  //width: 270px;
  margin: 0 20px;
+ @include desktop {
+  margin: 0 1vw;
+ }
  @include mobile {
   width: 125px;
   margin: 0 12px;
@@ -115,8 +136,13 @@
   font-family: Poppins, sans-serif;
   font-size: 21px;
   line-height: 140%;
+  font-weight: 700;
   text-transform: uppercase;
-  margin-top: 43px;
+  margin-top: 40px;
+  @include desktop {
+   font-size: 1.09vw;
+   margin-top: 2.08vw;
+  }
   @include mobile {
    font-size: 14px;
    margin-top: 17px;
@@ -128,8 +154,12 @@
   font-family: Poppins, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 150%;
   margin-top: 28px;
+  @include desktop {
+   font-size: 0.83vw;
+   margin-top: 1.46vw;
+  }
   @include mobile {
    display: none;
   }

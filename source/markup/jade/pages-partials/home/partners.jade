@@ -11,14 +11,14 @@
         .home-partners-box-slider.slick-1
           | <?php
           | echo '<div class="home-partners-box-slide"><div class="home-partners-box">';
-          | $i = 1;
+          | $i = 0;
           | $itemClass = 'partners-item';
           | foreach ($partnersLogos as $key => $value):
-          | $i++;
-          | if($i%6 === 0) echo '</div></div><div class="home-partners-box-slide"><div class="home-partners-box">';
-          | if($value['big']) { $itemClass = 'partners-item partners-item--md'; } else { $itemClass = 'partners-item'; }
+          | if($i%4 === 0 && $i !== 0) echo '</div></div><div class="home-partners-box-slide"><div class="home-partners-box">';
+          | if($value['big']) { $itemClass = 'partners-item partners-item--md'; $i++; } else { $itemClass = 'partners-item'; }
           | ?>
           div(class!="<?= $itemClass ?>" style!="background-image: url(<?= $value['logo']; ?>)")
+          | <?php $i++; ?>
           | <?php endforeach; ?>
           | </div></div>
           //.home-partners-box-slide

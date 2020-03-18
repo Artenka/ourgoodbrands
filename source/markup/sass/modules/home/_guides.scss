@@ -13,6 +13,13 @@
 }
 
 .home-guides {
+ @include desktop {
+  max-width: 1175px;
+  width: 62vw;
+  //max-width: 992px;
+  //width: 51.67vw;
+  margin: 0 auto;
+ }
 
  .title-big {
   @include mobile {
@@ -37,7 +44,10 @@
 .home-guides-list {
  display: flex;
  flex-wrap: wrap;
- margin-top: 60px;
+ margin-top: 45px;
+ @include desktop {
+  margin-top: 2.34vw;
+ }
 }
 
 .home-guide-layout {
@@ -135,21 +145,33 @@
 
  .home-guide__title {
   flex: 1;
-  min-height: 75px;
+  //min-height: 75px;
+  height: 75px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   color: #000000;
   font-family: Poppins, sans-serif;
   font-size: 18px;
+  font-weight: 700;
   letter-spacing: -0.75px;
-  line-height: 25px;
+  line-height: 138.89%;
   text-transform: uppercase;
   padding: 0 6px;
+  margin: 0;
+  overflow: hidden;
+  @include desktop {
+   height: 1.305566vw;
+   font-size: 0.94vw;
+   padding: 0 0.313vw;
+  }
  }
 
  .home-guide__thumb {
   width: 100%;
   //max-width: 191px;
   height: 11.35vw;
-  background: no-repeat center / contain;
+  background: no-repeat center / cover;
   margin: 1.04vw auto 0;
   @include tablet-mobile {
    height: 218px;
@@ -169,7 +191,7 @@
  display: flex;
  align-items: center;
  justify-content: center;
- margin-top: 15px;
+ //margin-top: 15px;
  @include mobile {
   display: none;
  }

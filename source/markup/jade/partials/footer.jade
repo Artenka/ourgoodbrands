@@ -1,56 +1,81 @@
+| <?php
+| $pageFooter = get_pages(array(
+|   'meta_value' => 'page-home.php'
+| ));
+| $pageFooterID = $pageFooter[0]->ID;
+| ?>
+
 .main-footer
   .main-wrapper
     .footer-outro
       .footer-outro-block
-        h2.footer-outro-block__title OUR MISSION
-        p.footer-outro-block__text Eco-hub of social impact resources for worldwide consumers and brands to make better decisions. Be entertained, cause sustainability’s gone dope!
+        h2.footer-outro-block__title <?= get_field('mission_title', $pageFooterID); ?>
+        p.footer-outro-block__text <?= get_field('mission_text', $pageFooterID); ?>
 
       .footer-outro-links
-        a(href="#").footer-outro-link
-          .footer-outro-link__title Discover<i class="icon-arrow-right icons"></i>
-          .footer-outro-link__text OGB STORIES AND NEWS
-        a(href="#").footer-outro-link
-          .footer-outro-link__title Write for us<i class="icon-arrow-right icons"></i>
-          .footer-outro-link__text BECOME A BLOGGER
-        a(href="#").footer-outro-link
-          .footer-outro-link__title Services<i class="icon-arrow-right icons"></i>
-          .footer-outro-link__text STRUGGLING WITH SALES?
+        a(href!="<?= get_field('mission_btns', $pageFooterID)[0]['link']; ?>").footer-outro-link
+          .footer-outro-link__title <?= get_field('mission_btns', $pageFooterID)[0]['title']; ?><i class="icon-arrow-right icons"></i>
+          .footer-outro-link__text <?= get_field('mission_btns', $pageFooterID)[0]['subtitle']; ?>
+        a(href!="<?= get_field('mission_btns', $pageFooterID)[1]['link']; ?>").footer-outro-link
+          .footer-outro-link__title <?= get_field('mission_btns', $pageFooterID)[1]['title']; ?><i class="icon-arrow-right icons"></i>
+          .footer-outro-link__text <?= get_field('mission_btns', $pageFooterID)[1]['subtitle']; ?>
+        a(href!="<?= get_field('mission_btns', $pageFooterID)[2]['link']; ?>").footer-outro-link
+          .footer-outro-link__title <?= get_field('mission_btns', $pageFooterID)[2]['title']; ?><i class="icon-arrow-right icons"></i>
+          .footer-outro-link__text <?= get_field('mission_btns', $pageFooterID)[2]['subtitle']; ?>
     .main-footer-top
       .main-footer-top__left
         a(href="#").logo
         p.main-footer-top__copy
-          i
-          |  2020 Ourgoodbrands
+          //i
+          | <span>&copy;</span> <?= get_field('copyrights_text', $pageFooterID); ?>
         .socials
-          a(href="#").social.social--fb.ion-social-facebook
-          a(href="#").social.social--tw.ion-social-twitter
-          a(href="#").social.social--pin.ion-social-pinterest
-          a(href="#").social.social--yt.ion-social-youtube
-          a(href="#").social.social--in.ion-social-instagram-outline
+          a(href!="<?= get_field('socials_links', $pageFooterID)[0]['link']; ?>").social.social--fb.ion-social-facebook
+          a(href!="<?= get_field('socials_links', $pageFooterID)[1]['link']; ?>").social.social--tw.ion-social-twitter
+          a(href!="<?= get_field('socials_links', $pageFooterID)[2]['link']; ?>").social.social--pin.ion-social-pinterest
+          a(href!="<?= get_field('socials_links', $pageFooterID)[3]['link']; ?>").social.social--yt.ion-social-youtube
+          a(href!="<?= get_field('socials_links', $pageFooterID)[4]['link']; ?>").social.social--in.ion-social-instagram-outline
       .main-footer-top__center
+        | <?php
+        | $menu_blocks = get_field('menu_blocks', $pageFooterID);
+        | foreach ($menu_blocks as $key => $value):
+        | ?>
         .main-footer-top__menu
-          h3.main-footer-top__subtitle.main-footer-top__menu-title COMPANY <i></i>
+          h3.main-footer-top__subtitle.main-footer-top__menu-title
+            | <?= $value['block_title']; ?>
+            .main-footer-top__subtitle-arrow
           ul.main-footer-top__menu-list
+            <?php foreach ($value['block_links'] as $key_inner => $value_inner): ?>
             li
-              a(href="#") About
-            li
-              a(href="#") Advertising
-            li
-              a(href="#") Feedback
-        .main-footer-top__menu
-          h3.main-footer-top__subtitle.main-footer-top__menu-title INFORMATION <i></i>
-          ul.main-footer-top__menu-list
-            li
-              a(href="#") Terms
-            li
-              a(href="#") Privacy
-            li
-              a(href="#") Feedback
+              a(href!="<?= $value_inner['link_url'] ?>") <?= $value_inner['link_title'] ?>
+            | <?php endforeach; ?>
+        | <?php endforeach; ?>
+        //.main-footer-top__menu
+        //  h3.main-footer-top__subtitle.main-footer-top__menu-title
+        //    | COMPANY
+        //    .main-footer-top__subtitle-arrow
+        //  ul.main-footer-top__menu-list
+        //    li
+        //      a(href="#") About
+        //    li
+        //      a(href="#") Advertising
+        //    li
+        //      a(href="#") Feedback
+        //.main-footer-top__menu
+        //  h3.main-footer-top__subtitle.main-footer-top__menu-title
+        //    | INFORMATION
+        //    .main-footer-top__subtitle-arrow
+        //  ul.main-footer-top__menu-list
+        //    li
+        //      a(href="#") Terms
+        //    li
+        //      a(href="#") Privacy
+        //    li
+        //      a(href="#") Feedback
       .main-footer-top__right
-        h3.main-footer-top__subtitle NEWSLETTER SIGN UP
+        h3.main-footer-top__subtitle <?= get_field('newsletter_title', $pageFooterID); ?>
         .email-form
-          form
-            input(type="email" placeholder="Email address")
+          form(action="//mc.us17.list-manage.com/subscribe/form-post?u=8bd7219f6b89b08a180bc0193&amp;id=122035fcfb&amp;popup=true" accept-charset="UTF-8" method="post" enctype="multipart/form-data" data-dojo-attach-point="formNode" novalidate="")
+            input(type="email" name="EMAIL" value="" id="mc-EMAIL" placeholder="Email address")
             button(type="submit") GO!
     .main-footer-bottom
-      p.main-footer-bottom__powered Powered by <a href="#">Fourppineapples</a>
+      p.main-footer-bottom__powered Powered by <a href="<?= get_field('powered_link', $pageFooterID); ?>"><?= get_field('powered_name', $pageFooterID); ?></a>

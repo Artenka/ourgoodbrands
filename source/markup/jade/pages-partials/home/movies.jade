@@ -19,7 +19,7 @@
           p.home-movie__text <?= get_the_excerpt(); ?>
         | <?php
         | endwhile;
-        | wp_reset_postdata();
+        | wp_reset_query();
         | ?>
         a(href="#").home-movie
           .home-movie__thumb

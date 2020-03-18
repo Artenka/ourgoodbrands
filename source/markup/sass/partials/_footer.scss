@@ -25,7 +25,7 @@
   content: '';
   width: 100vw;
   height: 100%;
-  background: url(../img/common/footer-outro-bg.svg) no-repeat center top / cover;
+  background: url(../img/common/footer-outro-bg.png) no-repeat center top / cover;
   //background: #fd8278;
   position: absolute;
   top: 0;
@@ -82,7 +82,7 @@
  &:before, &:after {
   content: '';
   //width: calc(50vw - 585px);
-  width: 9.5vw;
+  width: 5vw;
   height: 100%;
   position: absolute;
   @include tablet {
@@ -96,7 +96,7 @@
  &:before {
   background: #fd8278;
   //left: calc(50% - 50vw);
-  left: -9.5vw;
+  left: -5vw;
   @include tablet {
    //left: calc(50% - 50vw);
   }
@@ -108,7 +108,7 @@
  }
  &:after {
   background: #73c5c6;
-  right: -9.5vw;
+  right: -5vw;
   //right: calc(50% - 50vw);
   @include tablet {
    //right: calc(50% - 50vw);
@@ -287,6 +287,13 @@
    left: 0;
   }
 
+  span {
+   font-size: 20px;
+   @include mobile {
+    font-size: 10px;
+   }
+  }
+
   i {
    width: 14px;
    height: 23px;
@@ -341,26 +348,29 @@
   font-weight: 500;
   text-transform: uppercase;
   @include mobile {
+   display: flex;
+   align-items: center;
+   justify-content: center;
    font-size: 12px;
   }
 
-  i {
+  .main-footer-top__subtitle-arrow {
    width: 14px;
    height: 9px;
    display: none;
-   vertical-align: middle;
-   background: url(../img/common/dropdown-arrow.svg) no-repeat center / contain;
+   //vertical-align: middle;
+   background: url(../img/common/dropdown-arrow.png) no-repeat center / 11px auto;
    margin-left: 3px;
    position: relative;
    transition: 0.4s;
    @include mobile {
-    display: inline-block;
+    display: block;
    }
   }
 
   &.active {
 
-   i {
+   .main-footer-top__subtitle-arrow {
     transform: rotate(180deg);
     top: -2px;
    }

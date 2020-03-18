@@ -2,7 +2,7 @@
   .main-wrapper
     .home-hub-layout
       .home-hub
-        .home-hub__thumb(style!="background-image: url(<?= get_field('hub_img', $pageID); ?>)")
+        .home-hub__thumb <?= get_field('hub_img', $pageID); ?>
         .home-hub__content
           h2.home-hub__title <?= get_field('hub_title', $pageID); ?>
           p.home-hub__text <?= get_field('hub_text', $pageID); ?>

@@ -30,16 +30,29 @@
   font-family: AvenirNext, sans-serif;
   font-weight: 700;
   font-size: 60px;
+  @include desktop {
+   font-size: 3.125vw;
+  }
   @include mobile {
    font-size: 7.75vw;
   }
  }
 
  .subtitle {
-  font-size: 24px;
+  @include desktop {
+   font-size: 1.46vw;
+  }
   @include mobile {
    font-size: 18px;
    line-height: 22px;
+  }
+ }
+
+ .btn-rounded {
+  @include desktop {
+   border-width: 0.625vw;
+   font-size: 1.1vw;
+   padding: 0.52vw 2.34vw;
   }
  }
 

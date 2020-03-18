@@ -16,8 +16,8 @@ body#home-page
     #tie-container.site.tie-container
       #tie-wrapper
         | <?php
-        | /*TIELABS_HELPER::get_template_part( 'templates/header/load' );
-        | do_action( 'TieLabs/before_main_content' );*/
+        | TIELABS_HELPER::get_template_part( 'templates/header/load' );
+        | do_action( 'TieLabs/before_main_content' );
         | ?>
         .main#home
           include ../pages-partials/home/intro
@@ -26,8 +26,8 @@ body#home-page
           include ../pages-partials/home/movies
           include ../pages-partials/home/read
           include ../pages-partials/home/partners
+          | <?php the_content(); ?>
 
 
-          include ../partials/footer
           include ../partials/subscribe-bar
           | <?php get_footer('new'); ?>
