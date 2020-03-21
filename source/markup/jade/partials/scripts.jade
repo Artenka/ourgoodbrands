@@ -1,3 +1,7 @@
+script(type='text/javascript', src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js')
+script(type='text/javascript').
+  (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);
+
 script.
   $ = jQuery.noConflict();
   $(function () {
@@ -25,6 +29,11 @@ script.
     $('.main-footer-top__subtitle').on('touchstart', function(){
       $(this).toggleClass('active').next('.main-footer-top__menu-list').slideToggle(300);
     });
+
+    //$('#mc-embedded-subscribe-form').submit(function(){
+    //  $(this).find('.mc-field-group').hide();
+    //  $(this).find('#mc-embedded-subscribe').hide();
+    //});
 
     //phone flags
     //$("input[type=tel]").intlTelInput({
