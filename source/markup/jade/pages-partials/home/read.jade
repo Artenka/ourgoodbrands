@@ -1,3 +1,5 @@
+<?php $showRead = get_field('read_visibility', $pageID); ?>
+<?php if($showRead): ?>
 .section.section-home-read
   .main-wrapper
     .home-read
@@ -12,51 +14,15 @@
         | while (have_posts()) : the_post();
         | ?>
         .read-item-slide
-          a(href="<?= the_permalink(); ?>").read-item
+          a(href!="<?= the_permalink(); ?>").read-item
             .read-item__thumb
-              .read-item__thumb-inner(style!="background-image: url(<?= get_the_post_thumbnail_url() ?>)")
+              .read-item__thumb-inner(style!="background-image: url(<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>)")
             h2.read-item__title <?= the_title(); ?>
             p.read-item__text <?= get_the_excerpt(); ?>
         | <?php
         | endwhile;
         | wp_reset_query();
         | ?>
-        .read-item-slide
-          a(href="#").read-item
-            .read-item__thumb
-              .read-item__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/read/read-item-thumb.jpg)")
-            h2.read-item__title Lorem ipsum
-            p.read-item__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
-        .read-item-slide
-          a(href="#").read-item
-            .read-item__thumb
-              .read-item__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/read/read-item-thumb.jpg)")
-            h2.read-item__title Lorem ipsum
-            p.read-item__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
-        .read-item-slide
-          a(href="#").read-item
-            .read-item__thumb
-              .read-item__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/read/read-item-thumb.jpg)")
-            h2.read-item__title Lorem ipsum
-            p.read-item__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
-        .read-item-slide
-          a(href="#").read-item
-            .read-item__thumb
-              .read-item__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/read/read-item-thumb.jpg)")
-            h2.read-item__title Lorem ipsum
-            p.read-item__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
-        .read-item-slide
-          a(href="#").read-item
-            .read-item__thumb
-              .read-item__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/read/read-item-thumb.jpg)")
-            h2.read-item__title Lorem ipsum
-            p.read-item__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
-        .read-item-slide
-          a(href="#").read-item
-            .read-item__thumb
-              .read-item__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/read/read-item-thumb.jpg)")
-            h2.read-item__title Lorem ipsum
-            p.read-item__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
 
 
   script.
@@ -85,3 +51,6 @@
         ]
       })
     });
+
+
+<?php endif; ?>

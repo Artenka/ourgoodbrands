@@ -1,3 +1,5 @@
+<?php $showHub = get_field('hub_visibility', $pageID); ?>
+<?php if($showHub): ?>
 .section.section-home-hub
   .main-wrapper
     .home-hub-layout
@@ -8,3 +10,4 @@
           p.home-hub__text <?= get_field('hub_text', $pageID); ?>
           a(href!="<?= get_field('hub_btn_url', $pageID); ?>").home-hub__btn.btn-rounded <?= get_field('hub_btn_text', $pageID); ?>
 
+<?php endif; ?>

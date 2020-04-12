@@ -1,3 +1,5 @@
+<?php $showGuides = get_field('guides_visibility', $pageID); ?>
+<?php if($showGuides): ?>
 .section.section-home-guides
   .main-wrapper.main-wrapper--2
     .home-guides
@@ -40,7 +42,7 @@
             .home-guide-bg__rectangle.home-guide-bg__rectangle--3
           .home-guide
             h3.home-guide__title <?= the_title(); ?>
-            .home-guide__thumb(style!="background-image: url(<?= get_the_post_thumbnail_url(); ?>)")
+            .home-guide__thumb(style!="background-image: url(<?= get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>)")
         | <?php
         | $i++;
         | endwhile;
@@ -73,7 +75,7 @@
             .home-guide-bg__rectangle.home-guide-bg__rectangle--3
           .home-guide
             h3.home-guide__title <?= the_title(); ?>
-            .home-guide__thumb(style!="background-image: url(<?= get_the_post_thumbnail_url(); ?>)")
+            .home-guide__thumb(style!="background-image: url(<?= get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>)")
         | <?php
         | endwhile;
         | wp_reset_query();
@@ -103,3 +105,5 @@
         ]
       })
     });
+
+<?php endif; ?>

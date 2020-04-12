@@ -1,3 +1,5 @@
+<?php $showPartners = get_field('partners_visibility', $pageID); ?>
+<?php if($showPartners): ?>
 .section.section-home-partners
   .main-wrapper
     .home-partners
@@ -78,3 +80,6 @@
         ]
       })
     });
+
+
+<?php endif; ?>

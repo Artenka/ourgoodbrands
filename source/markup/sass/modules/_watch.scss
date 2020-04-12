@@ -1,0 +1,20 @@
+body#watch-page {
+
+ .main#watch {
+
+  .section-home-movies {
+   padding-top: 5vw;
+   @include mobile {
+    padding: 40px 0 200px;
+   }
+  }
+
+  .main-footer {
+   margin-top: -150px;
+   @include tablet-mobile {
+    margin-top: -110px;
+   }
+  }
+ }
+}
+

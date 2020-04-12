@@ -8,9 +8,12 @@
 .main-footer
   .main-wrapper
     .footer-outro
+      <?php $showMission = get_field('mission_visibility', $pageFooterID); ?>
+      <?php if($showMission): ?>
       .footer-outro-block
         h2.footer-outro-block__title <?= get_field('mission_title', $pageFooterID); ?>
         p.footer-outro-block__text <?= get_field('mission_text', $pageFooterID); ?>
+      <?php endif; ?>
 
       .footer-outro-links
         a(href!="<?= get_field('mission_btns', $pageFooterID)[0]['link']; ?>").footer-outro-link

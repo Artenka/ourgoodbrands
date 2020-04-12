@@ -1,6 +1,6 @@
 | <?php
 | /*
-| Template Name: Home
+| Template Name: Watch
 | */
 | ?>
 | <?php get_header('new'); ?>
@@ -11,7 +11,7 @@
 | $pageID = $page[0]->ID;
 | ?>
 
-body#home-page.new-page-design
+body#watch-page.new-page-design
   .background-overlay
     #tie-container.site.tie-container
       #tie-wrapper
@@ -19,13 +19,8 @@ body#home-page.new-page-design
         | TIELABS_HELPER::get_template_part( 'templates/header/load' );
         | do_action( 'TieLabs/before_main_content' );
         | ?>
-        .main#home
-          include ../pages-partials/home/intro
-          include ../pages-partials/home/guides
-          //include ../pages-partials/home/hub
+        .main#watch
           include ../pages-partials/home/movies
-          include ../pages-partials/home/read
-          include ../pages-partials/home/partners
           | <?php the_content(); ?>
 
 

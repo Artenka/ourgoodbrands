@@ -89,3 +89,22 @@ body .main {
  top: 0;
  left: 0;
 }
+
+.new-page-design {
+
+ #content {
+  max-width: 100%;
+  margin: 0;
+ }
+
+ .theme-header .fixed-nav {
+  top: 64px;
+  @include tablet-mobile {
+   top: 0;
+  }
+ }
+}
+
+.tie-popup-is-opend #tie-wrapper {
+ filter: none!important;
+}

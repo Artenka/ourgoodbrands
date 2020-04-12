@@ -1,10 +1,12 @@
+<?php $showIntro = get_field('intro_visibility', $pageID); ?>
+<?php if($showIntro): ?>
 .section.section-home-intro
   | <?php $featuredArticle = get_field('main_article_post', $pageID); ?>
   | <?php $featuredArticleAuthorId = get_post_field ('post_author', $featuredArticle); ?>
 
   .home-intro
     <?php if($featuredArticle): ?>
-    .home-banner(style!="background-image: url(<?= get_the_post_thumbnail_url( $featuredArticle, 'full' ) ?>)")
+    .home-banner(style!="background-image: url(<?= get_the_post_thumbnail_url( $featuredArticle, 'large' ) ?>)")
       .main-wrapper
         h3.home-banner__subtitle <?= get_field('featured_title', $pageID); ?>
         h2.home-banner__title <?= get_the_title($featuredArticle); ?>
@@ -44,14 +46,18 @@
         | $wp_query = new WP_Query( $args );
         | while ($wp_query->have_posts()) : $wp_query->the_post();
         | $introArticleAuthorId = get_post_field ('post_author');
+        | $avatar = get_user_meta($introArticleAuthorId)['userpicprofile'][0];
+        | if(!$avatar){
+        | $avatar = get_avatar_url($introArticleAuthorId);
+        | }
         | ?>
         .home-intro-article-slide
           .home-intro-article-layout
             a(href!="<?= the_permalink(); ?>").home-intro-article
               .home-intro-article__thumb
-                .home-intro-article__thumb-inner(style!="background-image: url(<?= get_the_post_thumbnail_url(); ?>)")
+                .home-intro-article__thumb-inner(style!="background-image: url(<?= get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>)")
               .home-intro-article__content
-                .home-intro-article__author(style!="background-image: url(<?= get_avatar_url($introArticleAuthorId); ?>)")
+                .home-intro-article__author(style!="background-image: url(<?= $avatar; ?>)")
                 h3.home-intro-article__name <?= the_title(); ?>
                 .home-intro-article__tags
                   .home-intro-article__tag <?= get_the_category()[0]->cat_name; ?>
@@ -87,3 +93,5 @@
         ]
       })
     });
+
+<?php endif; ?>

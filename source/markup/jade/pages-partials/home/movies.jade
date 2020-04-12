@@ -1,3 +1,5 @@
+<?php $showMovies = get_field('movies_visibility', $pageID); ?>
+<?php if($showMovies): ?>
 .section.section-home-movies
   .main-wrapper
     .home-movies
@@ -8,49 +10,20 @@
         | <?php
         | query_posts(array(
         |  'showposts' => -1,
-        |  'category_name' => 'movies'
+        |  'category_name' => 'watch'
         | ));
         | while (have_posts()) : the_post();
         | ?>
         a(href!="<?= the_permalink(); ?>").home-movie
           .home-movie__thumb
-            .home-movie__thumb-inner(style!="background-image: url(<?= get_the_post_thumbnail_url() ?>)")
+            .home-movie__thumb-inner(style!="background-image: url(<?= get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>)")
           h3.home-movie__tag <?= the_title(); ?>
           p.home-movie__text <?= get_the_excerpt(); ?>
         | <?php
         | endwhile;
         | wp_reset_query();
         | ?>
-        a(href="#").home-movie
-          .home-movie__thumb
-            .home-movie__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/movies/movie-thumb.jpg)")
-          h3.home-movie__tag DOCUMENTARY
-          p.home-movie__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
-        a(href="#").home-movie
-          .home-movie__thumb
-            .home-movie__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/movies/movie-thumb.jpg)")
-          h3.home-movie__tag DOCUMENTARY
-          p.home-movie__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
-        a(href="#").home-movie
-          .home-movie__thumb
-            .home-movie__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/movies/movie-thumb.jpg)")
-          h3.home-movie__tag DOCUMENTARY
-          p.home-movie__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
-        a(href="#").home-movie
-          .home-movie__thumb
-            .home-movie__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/movies/movie-thumb.jpg)")
-          h3.home-movie__tag DOCUMENTARY
-          p.home-movie__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
-        a(href="#").home-movie
-          .home-movie__thumb
-            .home-movie__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/movies/movie-thumb.jpg)")
-          h3.home-movie__tag DOCUMENTARY
-          p.home-movie__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
-        a(href="#").home-movie
-          .home-movie__thumb
-            .home-movie__thumb-inner(style!="background-image: url(<?php echo get_stylesheet_directory_uri();?>/img/home/movies/movie-thumb.jpg)")
-          h3.home-movie__tag DOCUMENTARY
-          p.home-movie__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
+
 
 
   script.
@@ -79,3 +52,5 @@
         ]
       })
     });
+
+<?php endif; ?>
